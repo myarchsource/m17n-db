@@ -1,0 +1,90 @@
+/* Copyright (C) 2003, 2004, 2005, 2008
+     National Institute of Advanced Industrial Science and Technology (AIST)
+     Registration Number H15PRO112
+   See the end for copying conditions.  */
+
+/***en
+
+@page mdbDir List of data in a database directory.
+
+@section dir-description DESCRIPTION
+
+The m17n library loads a list of definitions of data of the m17n
+database from files of name "mdb.dir" in each database directory at
+initialization time.  The plist format of this file is as follows:
+
+@verbatim
+MDB-DIR ::= DEFINITION *
+
+DEFINITION ::= '(' TAG0 [ TAG1 [ TAG2 [ TAG3 ] ] ] FILE [ VERSION ]')'
+
+TAGn ::= SYMBOL
+
+FILE ::= MTEXT
+
+VERSION ::= MTEXT
+@endverbatim
+
+If TAG0 is neither `charset' nor `char-table', and TAGn (n > 0) is a
+symbol `*', FILE can contain a wildcard charater, and all files
+matching FILE accoding to the rules used by the shell are the target
+of database files.  In that case, each file must contain
+SELF-DEFINITION which is a plist element providing the actual TAGn
+values by the form:
+
+@verbatim
+SELF-DEFINITION ::= '(' TAG0 TAG1 TAG2 TAG3 [ VERSION ] ')'
+@endverbatim
+
+For instance, if a database directory contains these files:
+
+@verbatim
+zh-py.mim:
+(input-method zh py)
+
+ko-han2.mim:
+(input-method ko han2)
+@endverbatim
+
+these lines in "mdb.dir":
+
+@verbatim
+(input-method zh py "zh-py.mim")
+(input-method ko han2 "ko-han2.mim")
+@endverbatim
+
+can be shortened to this single line:
+
+@verbatim
+(input-method * "*.mim")
+@endverbatim
+
+VERSION is a required version number of the m17n library.  The format
+is "XX.YY.ZZ" where XX is a major version number, YY is a minor
+version number, and ZZ is a patch level.
+
+*/
+
+/* 
+Copyright (C) 2003, 2004, 2005
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+
+This file is part of the m17n database; a sub-part of the m17n
+library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.
+*/

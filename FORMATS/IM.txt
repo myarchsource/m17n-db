@@ -1,0 +1,785 @@
+/* Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008
+     National Institute of Advanced Industrial Science and Technology (AIST)
+     Registration Number H15PRO112
+   See the end for copying conditions.  */
+
+/***en
+
+@page mdbIM Input Method
+
+@section im-description DESCRIPTION
+
+The m17n library provides a driver for input methods that are
+dynamically loadable from the m17n database (see @ref m17nInputMethod
+@latexonly (P.\pageref{group__m17nInputMethod}) @endlatexonly).
+
+This section describes the data format that defines those input
+methods.
+
+@section im-format SYNTAX and SEMANTICS
+
+The following data format defines an input method.  The driver loads a
+definition from a file, a stream, etc.  The definition is converted
+into the form of plist in the driver.
+
+@verbatim
+INPUT-METHOD ::=
+    IM-DECLARATION ? IM-DESCRIPTION ? TITLE ?
+     VARIABLE-LIST ? COMMAND-LIST ?  MODULE-LIST ?
+     MACRO-LIST ? MAP-LIST ? STATE-LIST ?
+
+IM-DECLARATION ::= '(' 'input-method' LANGUAGE NAME EXTRA-ID ? VERSION ? ')'
+LANGUAGE ::= SYMBOL
+NAME ::= SYMBOL
+EXTRA-ID ::= SYMBOL
+VERSION ::= '(' 'version' VERSION-NUMBER ')'
+
+IM-DESCRIPTION ::= '(' 'description' DESCRIPTION ')'
+DESCRIPTION ::= MTEXT-OR-GETTEXT | 'nil'
+MTEXT-OR-GETTEXT ::=  [ MTEXT | '(' '_' MTEXT ')']
+
+TITLE ::= '(' 'title' TITLE-TEXT ')'
+TITLE-TEXT ::= MTEXT
+
+VARIABLE-LIST ::= '(' 'variable' VARIABLE-DECLARATION * ')'
+VARIABLE-DECLARATION ::=  '(' VAR-NAME [ DESCRIPTION VALUE VALUE-CANDIDATE * ]')'
+VAR-NAME ::= SYMBOL
+VALUE ::= MTEXT | SYMBOL | INTEGER
+VALUE-CANDIDATE ::= VALUE | '(' RANGE-FROM RANGE-TO ')'
+RANGE-FROM ::= INTEGER
+RANGE-TO ::= INTEGER
+
+COMMAND-LIST ::= '(' 'command' COMMAND-DECLARATION * ')'
+COMMAND-DECLARATION ::=  '(' CMD-NAME [ DESCRIPTION KEYSEQ * ] ')'
+CMD-NAME ::= SYMBOL
+
+@endverbatim
+
+@c IM-DECLARATION specifies the language and name of this input
+method.  
+
+When @c LANGUAGE is @c t, the use of the input method is not limited
+to one language.
+
+When @c NAME is @c nil, the input method is not standalone, but
+is expected to be used in other input methods.  In such cases,
+@c EXTRA-ID is required to identify the input method.
+
+@c VERSION specifies the required minimum version number of the m17n
+library.  The format is "XX.YY.ZZ" where XX is a major version
+number, YY is a minor version number, and ZZ is a patch level.
+
+@c DESCRIPTION, if not nil, specifies the description text of an input
+method, a variable or a command.  If @c MTEXT-OR-GETTEXT takes the
+second form, the text is translated according to the current locale by
+"gettext" (if the translation is provided).
+
+@c TITLE-TEXT is a text displayed on the screen when this input method
+is active.
+
+There is one special input method file "global.mim" that declares
+common variables and commands.  The input method driver always loads
+this file and other input methods can inherit the variables and the
+commands.
+
+@c VARIABLE-DECLARATION declares a variable used in this input method.
+If a variable must be initialized to the default value, or is to be
+customized by a user, it must be declared here.  The declaration can
+be used in two ways.  One is to introduce a new variable.  In that
+case, @c VALUE must not be omitted.  Another is to inherit the variable
+from what declared in "global.mim", and to give the different default
+value and/or to make the variable customizable specially for the
+current input method.  In the latter case, @c VALUE can be omitted.
+
+@c COMMAND-DECLARATION declares a command used in this input method.
+If a command must be bound to the default key sequence, or is to be
+customized by a user, it must be declared here.  Like @c
+VARIABLE-DECLARATION, the declaration can be used in two ways.  One is
+to introduce a new command.  In that case, @c KEYSEQ must not be omitted.
+Another is to inherit the command from what declared in "global.mim",
+and to give the different key binding and/or to make the command
+customizable specially for the current input method.  In the latter
+case, @c KEYSEQ can be omitted.
+
+
+@verbatim
+MODULE-LIST ::= '(' 'module' MODULE * ')'
+
+MODULE ::= '(' MODULE-NAME FUNCTION * ')'
+
+MODULE-NAME ::= SYMBOL
+
+FUNCTION ::= SYMBOL
+@endverbatim
+
+Each @c MODULE declares the name of an external module (i.e. dynamic
+library) and function names exported by the module.  If a @c FUNCTION has
+name "init", it is called with only the default arguments (see the
+section about @c CALL) when an input context is created for the input
+method.  If a @c FUNCTION has name "fini", it is called with only the
+default arguments when an input context is destroyed.
+
+@verbatim
+MACRO-LIST ::=  MACRO-INCLUSION ? '(' 'macro' MACRO * ')' MACRO-INCLUSION ?
+
+MACRO ::= '(' MACRO-NAME MACRO-ACTION * ')'
+
+MACRO-NAME ::= SYMBOL
+
+MACRO-ACTION ::= ACTION
+
+TAGS ::= `(` LANGUAGE NAME EXTRA-ID ? `)`
+
+MACRO-INCLUSION ::= '(' 'include' TAGS 'macro' MACRO-NAME ? ')'
+
+@endverbatim
+
+@c MACRO-INCLUSION includes macros from another input method specified
+by @c TAGS.  When @c MACRO-NAME is not given, all macros from the
+input method are included.
+
+@verbatim MAP-LIST ::= MAP-INCLUSION ? '(' 'map' MAP * ')'
+MAP-INCLUSION ?
+
+MAP ::= '(' MAP-NAME RULE * ')'
+
+MAP-NAME ::= SYMBOL
+
+RULE ::= '(' KEYSEQ MAP-ACTION * ')'
+
+KEYSEQ ::= MTEXT | '(' [ SYMBOL | INTEGER ] * ')'
+
+MAP-INCLUSION ::= '(' 'include' TAGS 'map' MAP-NAME ? ')'
+
+@endverbatim
+
+When an input method is never standalone and always included in
+another method, @c MAP-LIST can be omitted.
+
+@c SYMBOL in the definitions of @c MAP-NAME must not be @c t nor @c
+nil.
+
+@c MTEXT in the definition of @c KEYSEQ consists of characters that
+can be generated by a keyboard.  Therefore @c MTEXT usually contains
+only ASCII characters.  However, if the input method is intended to be
+used, for instance, with a West European keyboard, @c MTEXT may
+contain Latin-1 characters.
+
+@c SYMBOL in the definition of @c KEYSEQ must be the return value of
+the minput_event_to_key () function.  Under the X window system, you
+can quickly check the value using the @c xev command.  For example,
+the return key, the backspace key, and the 0 key on the keypad are
+represented as @c (Return) , @c (BackSpace) , and @c (KP_0)
+respectively.  If the shift, control, meta, alt, super, and hyper
+modifiers are used, they are represented by the S- , C- , M- , A- , s-
+, and H- prefixes respectively in this order.  Thus, "return with
+shift with meta with hyper" is @c (S-M-H-Return) .  Note that "a with
+shift" .. "z with shift" are represented simply as A .. Z . Thus "a
+with shift with meta with hyper" is @c (M-H-A) .
+
+@c INTEGER in the definition of @c KEYSEQ must be a valid character
+code.
+
+@c MAP-INCLUSION includes maps from another input method specified by
+@c TAGS. When @c MAP-NAME is not given, all maps from the input method
+are included.
+
+
+@verbatim
+MAP-ACTION ::= ACTION
+
+ACTION ::= INSERT | DELETE | SELECT | MOVE | MARK
+           | SHOW | HIDE | PUSHBACK | POP | UNDO 
+	   | COMMIT | UNHANDLE | SHIFT | CALL
+	   | SET | IF | COND | '(' MACRO-NAME ')'
+
+PREDEFINED-SYMBOL ::=
+    '@0' | '@1' | '@2' | '@3' | '@4'
+    | '@5' | '@6' | '@7' | '@8' | '@9'
+    | '@<' | '@=' | '@>' | '@-' | '@+' | '@[' | '@]'
+    | '@@'
+    | '@-0' | '@-N' | '@+N'
+@endverbatim
+
+@verbatim
+STATE-LIST ::= STATE-INCUSION ? '(' 'state' STATE * ')'  STATE-INCUSION ?
+
+STATE ::= '(' STATE-NAME [ STATE-TITLE-TEXT ] BRANCH * ')'
+
+STATE-NAME ::= SYMBOL
+
+STATE-TITLE-TEXT ::= MTEXT
+
+BRANCH ::= '(' MAP-NAME BRANCH-ACTION * ')'
+	   | '(' 'nil' BRANCH-ACTION * ')'
+	   | '(' 't' BRANCH-ACTION * ')'
+
+STATE-INCLUSION ::= '(' 'include' TAGS 'state' STATE-NAME ? ')'
+
+@endverbatim
+
+When an input system is never standalone and always included in
+another system, @c STATE-LIST can be omitted.
+
+@c STATE-INCLUSION includes states from another input method specified
+by @c TAGS. When @c STATE-NAME is not given, all states from the input
+method are included.
+
+The optional @c STATE-TITLE-TEXT specifies a title text displayed on
+the screen when the input method is in this state.  If @c
+STATE-TITLE-TEXT is omitted, @c TITLE-TEXT is used.
+
+In the first form of @c BRANCH, @c MAP-NAME must be an item that
+appears in @c MAP.  In this case, if a key sequence matching one of @c
+KEYSEQs of @c MAP-NAME is typed, @c BRANCH-ACTIONs are executed.
+
+In the second form of @c BRANCH, @c BRANCH-ACTIONs are executed if a
+key sequence that doesn't match any of @c Branch's of the current
+state is typed.
+
+If there is no @c BRANCH beginning with @c nil and the typed key
+sequence does not match any of the current @c BRANCHs, the input
+method transits to the initial state.
+
+In the third form of @c BRANCH, @c BRANCH-ACTIONs are executed when
+shifted to the current state.  If the current state is the initial
+state, @c BRANCH-ACTIONs are executed also when an input context of
+the input method is created.
+
+@verbatim
+BRANCH-ACTION ::= ACTION
+@endverbatim
+
+An input method has the following two lists of symbols.
+
+<ul>
+<li> marker list
+
+A marker is a symbol indicating a character position in the preediting
+text.  The @c MARK action assigns a position to a marker.  The
+position of a marker is referred by the @c MOVE and the @c DELETE actions.
+
+<li> variable list
+
+A variable is a symbol associated with an integer, a symbol, or an
+M-text value.  The integer value of a variable can be set and referred
+by the @c SET action.  It can be referred by the @c SET, the @c
+INSERT, the @c SELECT, the @c UNDO, the @c IF, the @c COND actions.
+The M-text value of a variable can be referred by the @c INSERT
+action.  The symbol value of a variable can not be referred directly,
+is used the library implicitly (e.g. candidates-charset).  All
+variables are implicitly initialized to the integer value zero.
+
+</ul>
+
+Each @c PREDEFINED-SYMBOL has a special meaning when used as a marker.
+
+<ul>
+<li> @c @@0, @c @@1, @c @@2, @c @@3, @c @@4, @c @@5, @c @@6, @c @@7, @c @@8, @c @@9
+
+The 0th, 1st, 2nd, ... 9th position respectively.
+
+<li> @c @@<, @c @@=, @c @@>
+
+The first, the current, and the last position.
+
+<li> @c @@-, @c @@+
+
+The previous and the next position.
+
+<li> @c @@[, @c @@]
+
+The previous and the next position where a candidate list changes.
+</ul>
+
+Some of the @c PREDEFINED-SYMBOL has a special meaning when used as a candidate
+index in the @c SELECT action.
+
+<ul>
+
+<li> @c @@<, @c @@=, @c @@>
+
+The first, the current, and the last candidate of the current candidate group.
+
+<li> @c @@-
+
+The previous candidate.  If the current candidate is the first one in
+the current candidate group, then it means the last candidate in the
+previous candidate group.
+
+<li> @c @@+
+
+The next candidate.  If the current candidate is the last one in the
+current candidate group, then it means the first candidate in the next
+candidate group.
+
+<li> @c @@[, @c @@]
+
+The candidate in the previous and the next candidate group having the same
+candidate index as the current one.
+</ul>
+
+And, this also has a special meaning.
+
+<ul>
+<li> @c @@@
+
+Number of handled keys at that moment.
+
+</ul>
+
+These are for supporting surround text handling.
+
+<ul>
+<li> @c @@-0
+
+-1 if surrounding text is supported, -2 if not.
+
+<li> @c @@-N
+
+Here, @c N is a positive integer.  The value is the Nth previous
+character in the preedit buffer.  If there are only M (M<N) previous
+characters in it, the value is the (N-M)th previous character from the
+inputting spot.  When this is used as the argument of @c delete
+action, it specifies the number of characters to be deleted.
+
+<li> @c @@+N
+
+Here, @c N is a positive integer.  The value is the Nth following
+character in the preedit buffer.  If there are only M (M<N) following
+characters in it, the value is the (N-M)th following character from
+the inputting spot.  When this is used as the argument of @c delete
+action, it specifies the number of characters to be deleted.
+</ul>
+
+The arguments and the behavior of each action are listed below.
+
+@verbatim
+INSERT ::= '(' 'insert' MTEXT ')'
+           | MTEXT
+	   | INTEGER
+	   | SYMBOL
+           | '(' 'insert' SYMBOL ')'
+           | '(' 'insert' '(' CANDIDATES * ')' ')'
+           | '(' CANDIDATES * ')' 
+
+CANDIDATES ::= MTEXT | '(' MTEXT * ')'
+@endverbatim
+
+The first and second forms insert @c MTEXT before the current position.
+
+The third form inserts the character @c INTEGER before the current
+position.
+
+The fourth and fith form treats @c SYMBOL as a variable, and inserts
+its value (if it is a valid character code) before the current
+position.
+
+In the sixth and seventh forms, each @c CANDIDATES represents a
+candidate group, and each element of @c CANDIDATES represents a
+candidate, i.e. if @c CANDIDATES is an M-text, the candidates are the
+characters in the M-text; if @c CANDIDATES is a list of M-texts, the
+candidates are the M-texts in the list.
+
+These forms insert the first candidate before the current position.
+The inserted string is associated with the list of candidates and
+the information indicating the currently selected candidate.
+
+The marker positions affected by the insertion are automatically relocated.
+
+@verbatim
+DELETE ::= '(' 'delete' SYMBOL ')'
+           | '(' 'delete' INTEGER ')'
+@endverbatim
+
+The first form treats @c SYMBOL as a marker, and deletes characters
+between the current position and the marker position.
+
+The second form treats @c INTEGER as a character position, and deletes
+characters between the current position and the character position.
+
+The marker positions affected by the deletion are automatically relocated.
+
+@verbatim
+SELECT ::= '(' 'select' PREDEFINED-SYMBOL ')'
+           | '(' 'select' INTEGER ')'
+	   | '(' 'select' SYMBOL ')'
+@endverbatim
+
+This action first checks if the character just before the current position
+belongs to a string that is associated with a candidate list.  If it is,
+the action replaces that string with a candidate specified by the
+argument.
+
+The first form treats @c PREDEFINED-SYMBOL as a candidate index (as
+described above) that specifies a new candidate in the candidate list.
+
+The second form treats @c INTEGER as a candidate index that specifies a
+new candidate in the candidate list.
+
+In the third form, @c SYMBOL must have a integer value, and it is treated 
+as a candidate index.
+
+@verbatim SHOW ::= '(show)' @endverbatim
+
+This actions instructs the input method driver to display a candidate
+list associated with the string before the current position.
+
+@verbatim
+HIDE ::= '(hide)'
+@endverbatim
+
+This action instructs the input method driver to hide the currently
+displayed candidate list.
+
+@verbatim
+MOVE ::= '(' 'move' SYMBOL ')'
+         | '(' 'move' INTEGER ')'
+@endverbatim
+
+The first form treats @c SYMBOL as a marker, and makes the marker
+position be the new current position.
+
+The second form treats @c INTEGER as a character position, and makes
+that position be the new current position.
+
+@verbatim
+MARK ::= '(' 'mark' SYMBOL ')'
+@endverbatim
+
+This action treats @c SYMBOL as a marker, and sets its position to the
+current position.  @c SYMBOL must not be a @c PREDEFINED-SYMBOL.
+
+@verbatim
+PUSHBACK :: = '(' 'pushback' INTEGER ')'
+              | '(' 'pushback' KEYSEQ ')'
+@endverbatim
+
+The first form pushes back the latest @c INTEGER number of key events
+to the event queue if @c INTEGER is positive, and pushes back all key
+events if @c INTEGER is zero.
+
+The second form pushes back keys in @c KEYSEQ to the event queue.
+
+@verbatim
+POP ::= '(' 'pop' ')'
+@endverbatim
+
+This action pops the first key event that is not yet handled from the
+event queue.
+
+@verbatim
+UNDO :: = '(' 'undo' [ INTEGER | SYMBOL ] ')'
+@endverbatim
+
+If there's no argument, this action cancels the last two key events
+(i.e. the one that invoked this command, and the previous one).
+
+If there's an integer argument NUM, it must be positive or negative
+(not zero).  If positive, from the NUMth to the last events are
+canceled.  If negative, the last (- NUM) events are canceled.
+
+If there's a symbol argument, it must be resolved to an integer number
+and the number is treated as the actual argument as above.
+
+@verbatim
+COMMIT :: = '(commit)'
+@endverbatim
+
+This action commits the current preedit.
+
+@verbatim
+UNHANDLE :: = '(unhandle)'
+@endverbatim
+
+This action commits the current preedit and returns the last key as
+unhandled.
+
+@verbatim
+SHIFT :: = '(' 'shift' STATE-NAME ')'
+@endverbatim
+
+If @c STATE-NAME is @c t, this action shifts the current state to the
+previous one, otherwise it shifts to @c STATE-NAME.  In the latter
+case, @c STATE-NAME must appear in @c STATE-LIST.
+
+@verbatim
+CALL ::= '(' 'call' MODULE-NAME FUNCTION ARG * ')'
+
+ARG ::= INTEGER | SYMBOL | MTEXT | PLIST
+@endverbatim
+
+This action calls the function @c FUNCTION of external module @c
+MODULE-NAME.  @c MODULE-NAME and @c FUNCTION must appear in @c
+MODULE-LIST.
+
+The function is called with an argument of the type (#MPlist *).  The
+key of the first element is #Mt and its value is a pointer to an
+object of the type #MInputContext.  The key of the second element is
+#Msymbol and its value is the current state name.  @c ARGs are used as
+the value of the third and later elements.  Their keys are determined
+automatically; if an @c ARG is an integer, the corresponding key is
+#Minteger; if an @c ARG is a symbol, the corresponding key is
+#Msymbol, etc.
+
+The function must return NULL or a value of the type (#MPlist *) that
+represents a list of actions to take.
+
+@verbatim
+SET ::= '(' CMD SYMBOL1 EXPRESSION ')'
+
+CMD ::= 'set' | 'add' | 'sub' | 'mul' | 'div'
+
+EXPRESSION ::= INTEGER | SYMBOL2 | '(' OPERATOR EXPRESSION * ')'
+
+OPERATOR ::= '+' | '-' | '*' | '/' | '|' | '&' | '!'
+            | '=' | '<' | '>' | '<=' | '>='
+
+@endverbatim
+
+This action treats @c SYMBOL1 and @c SYMBOL2 as variables and sets the
+value of @c SYMBOL1 as below.
+
+If @c CMD is 'set', it sets the value of @c SYMBOL1 to the value of @c
+EXPRESSION.
+
+If @c CMD is 'add', it increments the value of @c SYMBOL1 by the value
+of @c EXPRESSION.
+
+If @c CMD is 'sub', it decrements the value of @c SYMBOL1 by the value
+of @c EXPRESSION.
+
+If @c CMD is 'mul', it multiplies the value of @c SYMBOL1 by the value
+of @c EXPRESSION.
+
+If @c CMD is 'div', it divides the value of @c SYMBOL1 by the value of
+@c EXPRESSION.
+
+@verbatim
+IF ::= '(' CONDITION ACTION-LIST1 ACTION-LIST2 ? ')'
+
+CONDITION ::= [ '=' | '<' | '>' | '<=' | '>=' ] EXPRESSION1 EXPRESSION2
+
+ACTION-LIST1 ::= '(' ACTION * ')'
+
+ACTION-LIST2 ::= '(' ACTION * ')'
+@endverbatim
+
+This action performs actions in @c ACTION-LIST1 if @c CONDITION is
+true, and performs @c ACTION-LIST2 (if any) otherwise.
+
+@verbatim
+COND ::= '(' 'cond' [ '(' EXPRESSION ACTION * ') ] * ')'
+@endverbatim
+
+This action performs the first action @c ACTION whose corresponding
+@c EXPRESSION has nonzero value.
+
+@ifnot FOR-MAN
+
+@section im-example1 EXAMPLE 1
+
+This is a very simple example for inputting Latin characters with
+diacritical marks (acute and cedilla).  For instance, when you type:
+@verbatim
+    Comme'die-Franc,aise, chic,,
+@endverbatim
+you will get this:
+@if FOR-HTML
+@verbatim
+    Commédie-Française, chic,
+@endverbatim
+@endif
+@if FOR-LATEX
+@latexonly
+\hskip5mm\texttt{\footnotesize Comm\'{e}die-Fran\c{c}aise, chic,}
+@endlatexonly
+@endif
+
+The definition of the input method is very simple as below, and it is
+quite straight forward to extend it to cover all Latin characters.
+
+@if FOR-HTML
+@verbatim
+(title "latin-postfix")
+(map
+ (trans
+  ("a'" ?á) ("e'" ?é) ("i'" ?í) ("o'" ?ó) ("u'" ?ú) ("c," ?ç)
+  ("A'" ?Á) ("E'" ?É) ("I'" ?Í) ("O'" ?Ó) ("U'" ?Ú) ("C," ?Ç)
+  ("a''" "a'") ("e''" "e'") ("i''" "i'") ("o''" "o'") ("u''" "u'")
+  ("c,," "c,")
+  ("A''" "A'") ("E''" "E'") ("I''" "I'") ("O''" "O'") ("U''" "U'")
+  ("C,," "C,")))
+(state
+ (init
+  (trans)))
+@endverbatim
+@endif
+@if FOR-LATEX
+@latexonly
+\texttt{\footnotesize
+\hskip2mm(title "latin-postfix")\\
+\hskip2mm(map\\
+\hskip4mm (trans\\
+\hskip6mm  ("a'" ?\'{a}) ("e'" ?\'{e}) ("i'" ?\'{i}) ("o'" ?\'{o})
+("u'" ?\'{u}) ("c," ?\c{c})\\
+\hskip6mm  ("A'" ?\'{A}) ("E'" ?\'{E}) ("I'" ?\'{I}) ("O'" ?\'{O})
+("U'" ?\'{U}) ("C," ?\c{C})\\
+\hskip6mm  ("a''" "a'") ("e''" "e'") ("i''" "i'") ("o''" "o'") ("u''" "u'")\\
+\hskip6mm  ("c,," "c,")\\
+\hskip6mm  ("A''" "A'") ("E''" "E'") ("I''" "I'") ("O''" "O'") ("U''" "U'")\\
+\hskip6mm  ("C,," "C,")))\\
+\hskip2mm(state\\
+\hskip4mm (init\\
+\hskip6mm  (trans)))}
+@endlatexonly
+@endif
+
+@section im-example2 EXAMPLE 2
+
+This example is for inputting Unicode characters by typing C-u
+(Control-u) followed by four hexadecimal digits.  For instance, when
+you type ("^u" means Control-u):
+@verbatim
+    ^u2190^u2191^u2192^u2193
+@endverbatim
+you will get this (Unicode arrow symbols):
+@if FOR-LATEX
+@verbatim
+    $\leftarrow \uparrow \rightarrow \downarrow
+@endverbatim
+@endif
+@if FOR-HTML
+@verbatim
+    ←↑→↓
+@endverbatim
+@endif
+
+The definition utilizes @c SET and @c IF commands as below:
+@verbatim
+(title "UNICODE")
+(map
+ (starter
+  ((C-U) "U+"))
+ (hex
+  ("0" ?0) ("1" ?1) ... ("9" ?9) ("a" ?A) ("b" ?B) ... ("f" ?F)))
+(state
+ (init
+  (starter (set code 0) (set count 0) (shift unicode)))
+ (unicode
+  (hex (set this @-)
+       (< this ?A
+	  ((sub this 48))
+	  ((sub this 55)))
+       (mul code 16) (add code this)
+       (add count 1)
+       (= count 4
+	  ((delete @<) (insert code) (shift init))))))
+@endverbatim
+
+@section im-example3 EXAMPLE 3
+
+This example is for inputting Chinese characters by typing PinYin key
+sequence.
+@if FOR-HTML
+For instance, when you type:
+@verbatim
+    nihaobei2jing2
+@endverbatim
+you will get:
+@verbatim
+    你好北京
+@endverbatim
+
+The definition utilizes @c CANDIDATE and @c SELECT commands as below.
+Note that this is just an example, and it ignores such important key
+as Backspace.
+
+@verbatim
+(title "拼")
+
+(map
+ ;; The initial character of Pinyin.
+ (starter
+  ("a") ("b") ... ("h") ("j") ... ("t") ("w") ("x") ("y") ("z"))
+
+ ;; Big table of Pinyin vs the corresponding Chinese characters.
+ (pinyin
+  ...
+  ("bei" ("被北备背悲辈杯倍贝碑" ...))
+  ("hao" ("好号毫豪浩耗皓嚎昊郝" ...))
+  ("jing" ("经京精境警竟静惊景敬" ...))
+  ("ni" ("你呢尼泥逆倪匿拟腻妮" ...))
+  ...)
+ ;; Typing 1, 2, ..., 0 selects the 0th, 1st, ..., 9th candidate.
+ (choose
+  ("1" (select 0)) ("2" (select 1)) ... ("9" (select 8)) ("0" (select 9))))
+
+(state
+ (init
+  ;; When an initial character of Pinyin is typed, re-handle it in
+  ;; "main" state.  Anything else is just produced as is.
+  (starter (show) (pushback 1) (shift main)))
+
+ (main
+  ;; When a complete Pinyin sequence is typed, shift to "select" state
+  ;; to allow users to select one from the candidates.
+  (pinyin (shift select))
+
+  ;; When anything else is typed, produce the current candidate (if
+  ;; any), and re-handle the last input in "init" state.
+  (nil (hide) (shift init)))
+
+ (select
+  ;; When a number is typed, select the corresponding canidate,
+  ;; produce it, and shift to "init" state.
+  (choose (hide) (shift init))
+
+  ;; When anything else is typed, produce the current candidate,
+  ;; and re-handle the last input in "init" state.
+  (nil (hide) (shift init))))
+@endverbatim
+
+@elseif FOR-LATEX
+@latexonly
+\begin{center}
+\fbox{This example is readable only in the documentation of HTML version.}
+\end{center}
+@endlatexonly
+@endif
+
+@endif
+
+@section im-seealso SEE ALSO
+
+@ref mim-list "Input Methods provided by the m17n database",
+@ref mdbGeneral "mdbGeneral(5)"
+*/
+
+/* 
+Copyright (C) 2003, 2004, 2005
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+
+This file is part of the m17n database; a sub-part of the m17n
+library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.
+*/
+
+/* Local Variables: */
+/* coding: utf-8 */
+/* End: */

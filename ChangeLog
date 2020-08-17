@@ -1,0 +1,3111 @@
+2018-02-08  K. Handa  <handa@gnu.org>
+
+	Version 1.8.0 released.
+
+	* configure.ac: Version changed to 1.8.0.
+
+2017-12-09  handa  <handa@gnu.org>
+
+	* MIM/zh-zhuyin.mim: Chinese input method name to zh-zhuyin.
+
+	* MIM/uk-kbd.mim: Renamed from ua-kbd.mim.  Language name fixed
+	(bug #45221).
+
+	* MIM/global.mim (first): Fix typo (bug #45075).
+
+2017-12-08  Jithin Thankachan <jithin@space-kerala.org>
+
+	* MIM/ml-enhanced-inscript.mim: New file.
+
+2017-12-08  Jón Fairbairn  <jf-nongnu@bookofsand.co.uk>
+
+	* MIM/rfc1345.mim: Add rules for a few more ASCII characters.
+
+2017-11-05  handa  <handa@gnu.org>
+
+	* FLT/LAOO-OTF.flt (layouter): Do not limit to "phetsarath ot".
+	Add OTF spec.
+
+2017-06-27  handa  <handa@gnu.org>
+
+	* FLT/BENG-OTF.flt (generator:lang-forms): Apply blwf,half,vatu to
+	multiple characters before HALANT.
+
+2017-06-27  U. Sudhakar <sudhakaru@cdac.in>
+
+	* MIM/mr-remigton.mim: New input method.
+
+        * MIM/mr-typewriter.mim: New input method.
+
+2017-01-24 Santosh Pradhan <sapradhan8@gmail.com>
+
+	* MIM/ne-rom-translit.mim: New input method.
+
+	* MIM/ne-trad-ttf.mim: New input method.
+
+	* icons/ne-trad-ttf.png: New icon file.
+
+2016-08-26  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim (multi-choice): Add more symbols for hand
+	gestures, happy/unhappy/neutral faces, hearts, stars, spiritual,
+	checks, and legal/text signs.
+
+	* .gitignore: Add "compile".
+
+2016-08-25  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/hu-rovas-post.mim: New input method.
+
+2016-02-03  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim (multi-choice): Add more symbols.
+
+2016-02-02  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim (multi-choice): New maps for many symbols.
+	(choose, change-candidate, focus-move, focus-change, backspace)
+	(commit-preedit): New maps copied from zh-util.mim.
+	(check-undo, select): New states copied from zh-util.mim.
+
+2016-01-24  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-optitransv2.mim: (dot_start): Renamed from danda.  Add
+	"./" key map.
+	(misc): Delete this map.
+	(state_init): Delete "misc" branch.  Change "danda" branch to
+	"dot_start".
+
+2016-01-20  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-optitransv2.mim: (dot_start): Renamed from danda.  Add
+	"./" key map.
+	(misc): Delete this map.
+	(state_init): Delete "misc" branch.  Change "danda" branch to
+	"dot_start".
+
+2015-11-27  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-optitransv2.mim: Improve the description string.
+
+	* MIM/kn-optitransv2.mim: Improve the description string.
+
+2015-11-25  B. Riefenstahl  <b.riefenstahl@turtle-trading.net>  (tiny chnage)
+
+	* FLT/HEBR-OTF.flt (category): Add Yiddish ligature.
+	(generator): Re-order marks.  Generalize the previous change (bug
+	#46399).
+
+2015-11-25  K. Handa  <handa@gnu.org>
+
+	* FLT/HEBR-OTF.flt (generator)  Add code for handling combining
+	marks not handled by OTF tables (bug #46399).
+
+2015-09-19  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-optitransv2.mim (consonant_with_space): New map separated
+	from consonant.
+	(state_indic_letter, state_consonant_pressed) Add a branch for
+	consonant_with_space.
+
+	* MIM/hi-optitransv2.mim (consonant_with_space): New map separated
+	from consonant.
+	(state_indic_letter, state_consonant_pressed) Add a branch for
+	consonant_with_space.
+
+	* icons/hi-optitransv2.png: New icon file.
+
+	* icons/kn-optitransv2.png: New icon file.
+
+2015-09-19  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-optitransv2.mim: New input method.
+
+	* MIM/hi-optitransv2.mim: New input method.
+
+2015-07-18  handa  <handa@gnu.org>
+
+	* FLT/COMBINING.flt: Suppress GSUB lookups.
+
+2015-04-05  K. Handa  <handa@gnu.org>
+
+	* m17n-db.in: Change encoding to utf-8.
+
+	* FORMATS/IM.ja.txt: Delete local variables section at the end.
+
+2014-12-12  K. Handa  <handa@gnu.org>
+
+	* Version 1.7.0 released.
+
+2014-11-10  K. Handa  <handa@gnu.org>
+
+	* configure.ac: Versions changed to 1.7.0.
+
+	* .gitignore: Add po/Makevars.template.
+
+2014-11-10  Joop Kiefte  <ikojba@gmail.com>
+
+	* MIM/ar-translit.mim: New input method.
+
+2014-09-15  Florêncio Neves  <florencioneves@gmail.com>
+
+	* MIM/latn1-pre.mim: New input method.
+
+2014-08-14  Elie Roux  <elie.roux@telecom-bretagne.eu>
+
+	* MIM/bo-ewts.mim (map:vowel): Fix previous change.
+
+2014-07-25  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/sa-itrans.mim (map:independent): Change Kannada sign
+	JIHVAMULIYA and UPADHMANIYA to the corresponding Vedic signs.
+
+2014-07-25  K. Handa  <handa@gnu.org>
+
+	* MIM/sa-itrans.mim (state:init): Add udatta.
+
+2014-07-16  Elie Roux  <elie.roux@telecom-bretagne.eu>
+
+	* MIM/bo-ewts.mim: Make it more compatible with EWTS.
+	(variable:precomposed): Change the default value to 1.
+	(map:standard-stack): Fix bug#42656 (mapping for "brl").  Add
+	missing EWTS mappings.
+	(map:vowel): Replace characters deprecated in Unicode 7.0 with the
+	correponding character sequences.
+	(map:consonant): Removing ambiguous combinations not in EWTS standard.
+	(map:special-subjoined): Add more Unicode compositions.
+
+2014-04-09  Srikanth Lakshmanan  <srik.lak@gmail.com>
+
+	* MIM/ta-phonetic.mim (map:trans), MIM/ta-tamil99.mim (map:trans):
+	Add missing characters ஶ்,க்‌ஷ் (non conjunct) series, symbols and
+	fixing SRI ஶ்ரீ as per Unicode 4.1 guidelines.
+
+2014-03-28  K. Handa  <handa@gnu.org>
+
+	* MIM/ne-rom.mim (map:trans): Remove unnecessary equivalent
+	mappings.
+
+2014-03-28  Santosh Pradhan  <sapradhan8@gmail.com>
+
+	* MIM/ne-trad.mim (map:trans): Fix mappings to be compatible with
+	LTK.
+
+	* MIM/ne-rom.mim (map:trans): Fix mappings to be compatible with
+	LTK.
+
+2014-03-23  K. Handa  <handa@gnu.org>
+
+	* .gitignore: Include *~.
+
+	* MIM/hi-itrans.mim (map:misc): Remove it.
+	(state:init): Remove the branch "misc".
+
+	* configure.ac (AM_INIT_AUTOMAKE): Remove arguments.
+
+	* Makefile.am (pkgdata_DATA, EXTRA_DIST): Remove @ICONS@.
+	(iconsdir, dist_icons_DATA): New varibables.
+
+	* po/m17n-db.pot, po/de.po, po/eo.po, po/ja.po, po/vi.po: Updated
+	for the changes of global.mim, lsymbol.mim, and ssymbol.mim.
+
+2014-03-22  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim, MIM/ssymbol.mim: New input methods.
+
+2014-02-23  K. Handa  <handa@gnu.org>
+
+	* MIM/global.mim (fallback-input-method): New global variable.
+
+2013-12-07  K. Handa  <handa@gnu.org>
+
+	* Version 1.6.5 released.
+
+2013-11-11  Kenichi Handa  <handa@gnu.org>
+
+	* configure.ac: Versions changed to 1.6.5.
+
+2013-11-09  Kenichi Handa  <handa@gnu.org>
+
+	* Makefile.am (EXTRA_DIST): Add tbl2mim.awk.
+
+2013-11-09  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-itrans.mim (starter): Remove "^".
+	(independent): Remvoe the mapping for "^".
+
+2013-11-07  Kenichi Handa  <handa@gnu.org>
+
+	* default.fst (katakana): Remove superfluous close paren.
+
+	* .gitignore, LANGDATA/.gitignore, po/.gitignore: New files
+
+	* .cvsignore, */.cvsignore: Remove them.
+
+2013-08-26  Sebin Abraham Jacob  <sebinajacob@gmail.com>
+
+	* MIM/ml-remington.mim: New input method.
+
+2013-08-26  Hiran Venugopal  <hiran.v@gmail.com>
+
+	* icons/ml-remington.png: New icon file.
+
+2013-08-20  Dominik Wujastyk  <wujastyk@gmail.com>
+
+	* MIM/sa-harvard-kyoto.mim: Add mappings for avagraha (".a"),
+	danda ("|"), double danda ("!"), and Om ("OM").
+
+2013-08-20  Anubhav Chattoraj  <anubhav.chattoraj@gmail.com>
+
+	* icons/sa-IAST.png: New icon file.
+
+2013-08-20  Sayak Sarkar  <sayak.bugsmith@gmail.com>
+
+	* icons/bn-disha.png: New icon file.
+
+2013-08-20  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-itrans.mim: Carrying over improvements from hi-intrans to
+	kn-itrans.mim (e.g. write ಶಂಕರ by typing shankara).
+
+	* MIM/hi-itrans.mim (map:starter): Add "ks" mapping.
+
+2013-08-19  Raghav Krishnapriyan  <raghav.k11n@gmail.com>
+
+	* MIM/yi-yivo.mim: Add various maps.
+
+2013-04-13  Kenichi Handa  <handa@gnu.org>
+
+	* AUTHORS: Merged from m17n-contrib.
+
+	* Makefile.am (m17n_scriptdir): New variable.
+	(m17n_script_SCRIPTS): New variable.
+
+	* MIM/as-inscript.mim, MIM/as-phonetic.mim, MIM/ath-phonetic.mim,
+	MIM/be-kbd.mim, MIM/bla-phonetic.mim, MIM/bn-disha.mim,
+	MIM/bn-inscript.mim, MIM/bn-probhat.mim, MIM/bo-ewts.mim,
+	MIM/cr-western.mim, MIM/cs-kbd.mim, MIM/eo-h-f.mim, MIM/eo-h.mim,
+	MIM/eo-plena.mim, MIM/eo-q.mim, MIM/eo-vi.mim, MIM/eo-x.mim,
+	MIM/gu-inscript.mim, MIM/gu-phonetic.mim, MIM/hi-inscript.mim,
+	MIM/hi-phonetic.mim, MIM/hi-remington.mim, MIM/hi-vedmata.mim,
+	MIM/ii-phonetic.mim, MIM/iu-phonetic.mim, MIM/kn-inscript.mim,
+	MIM/kn-kgp.mim, MIM/kn-typewriter.mim, MIM/ks-inscript.mim,
+	MIM/ks-kbd.mim, MIM/mai-inscript.mim, MIM/math-latex.mim,
+	MIM/ml-inscript.mim, MIM/ml-mozhi.mim, MIM/ml-swanalekha.mim,
+	MIM/mr-inscript.mim, MIM/mr-itrans.mim, MIM/mr-phonetic.mim,
+	MIM/ne-rom.mim, MIM/ne-trad.mim, MIM/nsk-phonetic.mim,
+	MIM/oj-phonetic.mim, MIM/or-inscript.mim, MIM/or-phonetic.mim,
+	MIM/pa-anmollipi.mim, MIM/pa-inscript.mim, MIM/pa-jhelum.mim,
+	MIM/pa-phonetic.mim, MIM/ps-phonetic.mim, MIM/ru-translit.mim,
+	MIM/sa-iast.mim, MIM/sd-inscript.mim, MIM/si-phonetic-dynamic.mim,
+	MIM/si-singlish.mim, MIM/si-sumihiri.mim, MIM/si-trans.mim,
+	MIM/ta-inscript.mim, MIM/ta-phonetic.mim, MIM/ta-tamil99.mim,
+	MIM/ta-typewriter.mim, MIM/ta-vutam.mim, MIM/tai-sonla.mim,
+	MIM/te-apple.mim, MIM/te-inscript.mim, MIM/te-pothana.mim,
+	MIM/te-rts.mim, MIM/te-sarala.mim, MIM/ur-phonetic.mim,
+	MIM/uz-kbd.mim, MIM/vi-han.mim, MIM/vi-nom-vni.mim,
+	MIM/vi-nom.mim, MIM/yi-yivo.mim, MIM/zh-pinyin-vi.mim,
+	MIM/zh-zhuyin.mim: Merged from the m17n-contrib package.
+
+	* icons/as-inscript.png, icons/as-phonetic.png, icons/be-kbd.png,
+	icons/bn-inscript.png, icons/bn-probhat.png, icons/cs-kbd.png,
+	icons/eo-h-fundamente.png, icons/eo-h-sistemo.png,
+	icons/eo-plena.png, icons/eo-q-sistemo.png,
+	icons/eo-x-sistemo.png, icons/gu-inscript.png,
+	icons/gu-phonetic.png, icons/hi-inscript.png,
+	icons/hi-phonetic.png, icons/hi-remington.png,
+	icons/hi-vedmata.png, icons/ii-phonetic.png,
+	icons/kn-inscript.png, icons/kn-kgp.png, icons/math-latex.png,
+	icons/ml-inscript.png, icons/ml-mozhi.png,
+	icons/ml-swanalekha.png, icons/mr-inscript.png, icons/ne-rom.png,
+	icons/ne-trad.png, icons/or-inscript.png, icons/pa-inscript.png,
+	icons/pa-jhelum.png, icons/pa-phonetic.png, icons/ps-phonetic.png,
+	icons/sd-inscript.png, icons/si-phonetic-dynamic.png,
+	icons/si-sumihiri.png, icons/si-transliteration.png,
+	icons/ta-inscript.png, icons/ta-phonetic.png,
+	icons/ta-tamil99.png, icons/ta-typewriter.png, icons/ta-vutam.png,
+	icons/te-apple.png, icons/te-inscript.png, icons/te-pothana.png,
+	icons/te-sarala.png, icons/ur-phonetic.png, icons/uz-kbd.png,
+	icons/vi-nom-vni.png, icons/vi-nom.png, icons/yi-yivo.png,
+	icons/zh-zhuyin.png: Merged from the m17n-contrib package.
+
+	* tbl2mim.awk: Merged from the m17n-contrib package.
+
+	* ChangeLog.contrib, NEWS.contrib: Copied from ChangeLog and NEWS
+	of the m17n-contrib package.
+
+2013-02-03  Kenichi Handa  <handa@gnu.org>
+
+	* Makefile.am (SUBDIRS): Delete FLT and MIM.
+	(pkgdata_DATA): Add @INPUT_METHOD@, @FLT@, and @ICONS@.
+	(EXTRA_DIST): Likewise.
+
+	* configure.ac (INPUT_METHOD, FLT): New variables.
+	(ICONS): Set it with sub-directory name.
+	(AC_CONFIG_FILES): Delete icons/Makefile, FLT/Makefile,
+	MIM/Makefile.
+
+	* FLT/Makefile.am, MIM/Makefile.am, icons/Makefile.am: Deleted.
+
+2012-12-29  Kenichi Handa  <handa@gnu.org>
+
+	* FORMATS/0Genenral.ja.txt: Encoding changed to utf-8.
+
+	* FORMATS/CharsetList.ja.txt: Likewise.
+
+	* FORMATS/CodingList.ja.txt: Likewise.
+
+	* FORMATS/Dir.ja.txt: Likewise.
+
+	* FORMATS/FLT.ja.txt: Likewise.
+
+	* FORMATS/FontEncoding.ja.txt: Likewise.
+
+	* FORMATS/Fontset.ja.txt: Likewise.
+
+	* FORMATS/IM.ja.txt: Likewise. Add examples in Japanese.
+
+2012-12-22  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-itrans.mim (map:consonant): Add mappings "nx", "gH", jH",
+	"DH", and "bH", delete "ggg", "jjj", "DDD", "bbb".
+	(map:independent): Remove mapping "#", "*", and "]" which must be
+	used for inputting the corresponding symbols.
+
+	* icons/sa-itrans.png: New file.
+
+2012-11-20  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-itrans.mim (description): Improved.
+	(map:consonant, map:independent, map:dependent): Add more mappings.
+
+	* MIM/sa-itrans.mim (description): Refer to hi-itrans.mim.
+
+2012-11-15  Kenichi Handa  <handa@gnu.org>
+
+	* MIM/sa-itrans.mim (state:init): Add "misc" branch.
+
+	* MIM/hi-itrans.mim (map:starter): Cancel the previous change.
+	Add "]".
+	(map:cosonant): Add keys for consonants with NUKTA.
+	(map:danda): Add more keys that change "." to DANDA.
+	(map:commit-key): Change "./" to S-C-Return.
+	(map:misc): New map.
+	(state:init): Add "misc" branch.
+
+2012-11-01  Kenichi Handa  <handa@gnu.org>
+
+	* MIM/hi-itrans.mim (enable-udatta): Delete it.
+	(map:starter): Add "_" and "'".
+	(map:danda): Renamed back from danda-udatta.  Delete ".'" and
+	".-".  Add ". ".
+	(map:return): Delete it.
+	(map:commit-key): New map for "./".
+	(state:intermediate, state:second, state:after-eo): Change
+	danda-udatta to danda.  Change return to commit-key.
+
+	* MIM/sa-itrans.mim: Do not include states of hi-itrans.
+	(map:udatta): New map.
+	(state): Copied from hi-itrans.  Add udatta to each state.
+
+2012-10-22  Kenichi Handa  <handa@gnu.org>
+
+	* MIM/sa-itrans.mim (enable-udatta): Set to 1.
+
+	* MIM/hi-itrans.mim (enable-udatta): New variable.
+	(map:danda-udatta): Renamed from danda.  Add mappings for udatta
+	and anundatta.
+	(state:intermediate, state:second, state:after-eo): Adjusted for
+	the above change.
+
+2012-10-21  Kenichi Handa  <handa@gnu.org>
+
+	* MIM/ml-itrans.mim: Refer to SCIM only as an example of input
+	method framework.  Format key mappings.
+
+2012-10-20  Kenichi Handa  <handa@gnu.org>
+
+	* .cvsignore: Add *.sig.
+
+2012-10-20  Shankar Prasad  <svenkate@redhat.com>
+
+	* MIM/kn-itrans.mim: Add examples to the description.
+
+2012-10-20  Ani Peter  <apeter@redhat.com>
+
+	* MIM/ml-itrans.mim: Add key mappings to the description.
+
+2012-10-18  Kenichi Handa  <handa@gnu.org>
+
+	* MIM/sa-itrans.mim: New input method.
+
+	* MIM/hi-itrans.mim (variable:trim-last-halant): New variable.
+	(map:independent, map:dependent): Add code for handling candra-e
+	and Candra-o.
+	(map:digit, map:dot, map:eo-dot-c): New maps.
+	(state:intermediate, state:second): Handle variables
+	LAST-HALANT-POS and CANDRA-E-O.
+	(state:after-eo): Renamed from "third".
+
+2012-10-02  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-itrans.mim: Add ".," for DOUBLE DANDA.  Add "nk", "ng",
+	etc. for rapid typing.  Adopt shortcut typing "c", "z", "C, "S"
+	from Kyoto-Harvard system.
+
+2012-09-28  Kenichi Handa  <handa@gnu.org>
+
+	* MIM/hi-itrans.mim: Fix handling of danda.
+
+2012-09-18  Kenichi Handa  <handa@gnu.org>
+
+	* Version 1.6.4 released.
+
+2012-04-23  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.6.4.
+
+2011-12-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/si-wijesekera.mim:
+	Add alt-gr mappings (G- ) to correspond to alt mappings (A- ).
+
+2011-12-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/am-sera.mim: Correct the mapping of "a" from U+12A3 to U+12A0.
+
+2011-10-11  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.6.3 released.
+
+2011-10-06  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/zh-util.mim (map:commit-preedit): Add SPC.
+
+2011-09-12  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.6.3.
+
+2011-08-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ARAB-OTF-NO-GPOS.flt: Fix the handling of LAM-ALEF.
+
+2011-03-22  Kenichi Handa  <handa@m17n.org>
+
+	* po/de.po, po/ja.po, po/m17n-db.pot, po/vi.po: Update po files
+
+2011-01-05  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/FLT.txt: Fix typo.
+
+2010-12-08  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/kn-itrans.mim: Comment header ";;;" are changed to ";;" to
+	avoid doxygen problem.
+
+2010-12-07  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/IM-tut.txt: Fix typo.
+
+	* FORMATS/Fontset.txt (FONT-SPEC): Fix typo.
+
+2010-11-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/Makefile.am (INPUT_METHOD): Add ua-kbd.mim.
+
+2010-11-29  Nikolay Orlyuk <virkony gmail com>  (tiny change)
+
+	* icons/ua-kbd.png: New file.  Modified from ru-kbd.png.
+
+	* MIM/ua-kbd.mim: New file.  Modified from ru-kbd.mim.
+
+2010-11-26  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/Makefile.am (INPUT_METHOD): Remove bo-ewts.mim.
+
+	* MIM/bo-ewts.mim: Moved to the m17n-contrib package with
+	improvements by Hugues MOISY <hugues.moisy@gmail.com>.
+
+2010-11-24  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/SINH-OTF.flt:
+	Remove 0x0DDA from left matra group.  Add 0x0DDB to left matra group.
+
+2010-10-25  Harshula <harshula@gmail.com>  (tiny change)
+
+	* MIM/ta-lk-renganathan.mim (map:preedit):
+	Unhandle those keys that belong to the map "starter" but not
+	processed explicitly.
+
+2010-10-04  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.6.2 released.
+
+2010-10-04  gokul  <dotgokul@gmail.com>  (tiny change)
+
+	* MIM/kn-itrans.mim: Remove LLi, LLI, and ksh to avoid
+	confliction.  Change Lru to LRu.
+
+2010-09-27  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ARAB-OTF.flt, FLT/ARAB-OTF-NO-GPOS.flt:
+	Do not require liga as a GSUB feature.
+
+2010-09-22  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.6.2.
+
+2010-09-17  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/ARAB-OTF-NO-GPOS.flt: Fix for the case of failed LAM-ALEF
+	ligature.  Handle positioning of multiple diacritcs.  Fix typo.
+
+2010-09-15  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/ARAB-OTF-NO-GPOS.flt: Mostly re-write for LAM-ALEF ligature.
+
+2010-09-10  Kenichi Handa  <handa@m17n.org>
+
+	* FONTSIZE.tbl: Remove the entry for Norasi font.
+
+2010-09-10  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.tbl (hebrew): Delete #x591.
+
+2010-09-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* truetype.fst: Enhance preferred fonts for han.
+
+	* xfont.fst: Reconstructed.
+
+	* default.fst: Reconstructed.
+	default.fst = generic.fst + xfont.fst.
+
+	* generic.fst: Cosmetic changes.
+
+	* truetype.fst: Reconstructed.
+	truetype.fst = generic.fst + tested free truetype fonts.
+
+2010-09-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* truetype.fst: More Reconstruction.
+
+	* truetype.fst: Reconstructed.
+
+2010-09-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* generic.fst: Reconstructed.
+
+	* FLT/Makefile.am: Add HEBR-OTF.flt.
+
+2010-09-02  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (%.tab): Don't build BLOCK.tab.
+
+2010-09-01  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ARAB-OTF.flt: Use U+25CC for isolated vowel signs.
+
+2010-07-16  Kenichi Handa  <handa@m17n.org>
+
+	* po/de.po: Fix copyright.
+
+	* po/LINGUAS: Add de.
+
+2010-07-16  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/si-wijesekera.mim (map:preedit):
+	Unhandle those keys that belong to the map "starter"
+	but not to "independent", "kombuva", nor "dependent".
+
+2010-07-01  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/HEBR-OTF.flt: New file.
+
+2010-06-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/SINH-OTF.flt:
+	Handle pres, abvs, blws and psts correctly as GSUB features.
+
+2010-06-10  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/ja-trycode.mim:
+	Add more kanji to catch up the new joyo kanji table.
+
+2010-06-01  Gheyret T. Kenji  <gheyret@gmail.com>  (tiny change)
+
+	* MIM/ug-kbd.mim: Correct the mapping of the underscore key.
+
+2010-05-22  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/ko-han2.mim (state:state-LVT-or-LVTL): Add backspace branch.
+
+2010-05-21  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/ko-han2.mim (map:L-or-T-head): Remove conflicting key
+	sequences.
+	(map:L): Likewise.  Add "rr", "ee", "qq" , "tt".
+	(map:T-or-TL): Renamed from T. Set T1 in rules.
+	(state:init): Remove branch T.
+	(state:state-LV): Remove branch T.  Add branch T-or-TL.
+	(state:state-LVT-or-LVTL): New state.
+
+2010-05-20  Gheyret T. Kenji  <gheyret@gmail.com>  (tiny change)
+
+	* MIM/ug-kbd.mim: Add three punctuations.
+
+2010-04-22  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst (malayalam): Use mlym-otf for rachana.
+
+2010-04-21  Kenichi Handa  <handa@m17n.org>
+
+	* truetype.fst (malayalam): Use mlym-otf for rachana.
+
+2010-04-13  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.6.1 released.
+
+2010-04-13  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.6.1.
+
+2010-04-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/SINH-OTF.flt: Change font download URL.
+
+	* FLT/MYMR-SIL.flt: Use font-facility to check U+25CC's availability.
+
+2010-04-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/SINH-OTF.flt: Follow the new Indic scripts' algorithm.
+
+2010-03-30  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.6.0 released.
+
+2010-03-30  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.6.0.
+
+	* Makefile.am (pkgdata_DATA): Add BLOCK.tab.
+	(CHAR_TABLE): Remove BLOCK.tab.
+	(BLOCK.tab): Delete this target.
+
+2010-03-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt, FLT/GUR2-OTF.flt, FLT/GURU-OTF.flt:
+	Remove unused mnemonic.
+
+2010-03-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Chillu characters form consonant clusters.
+
+2010-03-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/KNDA-OTF.flt, FLT/TELU-OTF.flt, FLT/TAML-OTF.flt,
+	FLT/GURU-OTF.flt: Rewritten to emulate the new OTF behaviour by
+	using old fonts.
+
+	* FLT/ORYA-OTF.flt, FLT/MLYM-OTF.flt, FLT/BENG-OTF.flt,
+	FLT/GUJR-OTF.flt, FLT/DEVA-OTF.flt: Include syllable final HJ to
+	otf part.
+
+2010-03-25  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ORYA-OTF.flt (reorder): Add the patters JY and HJ before pstf.
+
+	* FLT/MLYM-OTF.flt (reorder): Add the patters JP and HJ before pstf.
+
+	* FLT/GUJR-OTF.flt (stage 1):
+	Use iteration rather than recursive for reordering.
+
+	* FLT/DEVA-OTF.flt (stage 2):
+	Use iteration rather than recursive for reordering.
+
+	* FLT/BENG-OTF.flt (stage 0):
+	Use font-facility to check KHANDA-TA's availability.
+	(reorder): Add the patterns JY and HJ before pstf.
+
+2010-03-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt, FLT/ORYA-OTF.flt, FLT/GUJR-OTF.flt,
+	FLT/BENG-OTF.flt, FLT/DEVA-OTF.flt: Rewritten to emulate the new
+	OTF behaviour by using old fonts.
+
+2010-03-19  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.6.0pre.
+
+	* po/ja.po, po/m17n-db.pot, po/vi.po: Re-generated.
+
+2010-03-01  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/TML2-OTF.flt, FLT/TEL2-OTF.flt, FLT/ORY2-OTF.flt,
+	FLT/MLM2-OTF.flt, FLT/KND2-OTF.flt, FLT/GUR2-OTF.flt,
+	FLT/GJR2-OTF.flt, FLT/DEV2-OTF.flt, FLT/BNG2-OTF.flt: Use
+	font-facility to check U+25CC's availability.
+
+2010-02-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MYMR-SIL.flt: Display non-spacing marks with DOTTED CIRCLE.
+
+2010-02-26  Kenichi Handa  <handa@m17n.org>
+
+	* truetype.fst (myanmar): Add mymr-sil.
+
+	* default.fst (myanmar): Add mymr-sil.
+
+	* FLT/MYMR-SIL.flt: Add grapheme cluster boundaring.
+
+2010-02-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* generic.fst: Add mymr-sil for Myanmar.
+
+	* generic.fst: Add new oft's for Indic scripts.
+
+	* FLT/Makefile.am: More flt files.
+
+	* FLT/MYMR-SIL.flt: New file.
+
+2010-02-18  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/vi-telex.mim, MIM/vi-viqr.mim, MIM/vi-vni.mim, MIM/vi-tcvn.mim
+	(state:init): If surrounding text is not supported, shift to
+	after-c when an initial consonant is typed.
+	(state:after-c): New state.
+
+2010-02-12  Kenichi Handa  <handa@m17n.org>
+
+	* UNIDATA/CaseFolding.txt, UNIDATA/copyright.html,
+	UNIDATA/LineBreak.txt, UNIDATA/PropList.txt, UNIDATA/README,
+	UNIDATA/Scripts.txt, UNIDATA/SpecialCasing.txt,
+	UNIDATA/UnicodeData.txt, UNIDATA/WordBreakProperty.txt: Updated.
+
+2010-01-25  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* SCRIPT.tbl: Add dev2, bng2, gur2, gjr2, ory2, tml2, tel2, knd2
+	and mlm2.
+
+	* FLT/MLM2-OTF.flt, FLT/KND2-OTF.flt, FLT/TEL2-OTF.flt,
+	FLT/TML2-OTF.flt, FLT/ORY2-OTF.flt, FLT/GJR2-OTF.flt,
+	FLT/GUR2-OTF.flt, FLT/BNG2-OTF.flt, FLT/DEV2-OTF.flt: New file.
+
+2010-01-22  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/si-samanala.png: Modified.
+
+	* MIM/si-wijesekera.png: Modified.
+
+2010-01-21  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/si-samanala.mim (title): Changed.
+
+2009-12-08  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/Makefile.am (INPUT_METHOD): Exclude
+	si-wijesekera-preedit.mim.
+
+2009-12-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Add akhn in Stage 4 for lohit_ml.ttf.
+
+2009-11-09  Ruddy  <kiru.pawnee@yahoo.fr>  (tiny change)
+
+	* MIM/lo-lrt.mim (map:vowel-simple): Add "hya" map.
+
+2009-11-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/si-wijesekera-preedit.mim: Removed.
+
+	* MIM/si-wijesekera.mim: Disable surrounding text by default.
+	Update information URL.
+
+2009-10-28  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.tbl (devanagari): Add OTF script tag "dev2".
+
+2009-10-21  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/cmc-kbd.mim: Fix @+N notation.  Version set to 1.6.0.
+
+2009-10-20  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/Makefile.am (FONT_LAYOUT_TABLE): Delet KHMR-MULE.flt.
+
+2009-10-15  Kenichi Handa  <handa@m17n.org>
+
+	* xfont.fst (khmer): Delete this script.
+
+	* default.fst (khmer): Delete the entry for mulekhmer-1 font.
+
+	* FLT/KHMR-MULE.flt: Delete it.
+
+2009-09-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/si-wijesekera.mim:
+	Merge si-wijesekera-preedit.mim to si-wijesekera.mim.
+
+2009-09-03  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: Remove cdac entries.
+
+	* generic.fst: Remove cdac entries.
+
+2009-09-02  Kenichi Handa  <handa@m17n.org>
+
+	* icons/ru-phonetic.png: New file.
+
+	* icons/zh-bopomofo.png: New file.
+
+2009-07-28  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.5 released.
+
+2009-07-28  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (EXTRA_DIST): Add bootstrap.sh.
+
+	* configure.ac: Versions changed to 1.5.5.
+
+2009-07-14  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: Update URL for TibetanMachineUniAlpha.ttf.
+
+2009-06-19  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/vi-base.mim (smart-quotes): New map.
+
+	* MIM/vi-telex.mim (init): Add smart-quotes.
+
+	* MIM/vi-tcvn.mim (init): Add smart-quotes.
+
+	* MIM/vi-vni.mim (init): Add smart-quotes.
+
+2009-04-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/si-wijesekera-preedit-alt.mim: Deleted.
+
+	* MIM/Makefile.am: Remove si-wijesekera-preedit-alt.mim.
+
+2009-03-11  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/unicode.mim:
+	Move the "title" section to the canonicalised position.
+
+2009-03-02  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.4 released.
+
+2009-03-02  Kenichi Handa  <handa@m17n.org>
+
+	* UNIDATA/CaseFolding.txt, UNIDATA/LineBreak.txt,
+	UNIDATA/PropList.txt, UNIDATA/Scripts.txt,
+	UNIDATA/SpecialCasing.txt, UNIDATA/UnicodeData.txt,
+	UNIDATA/WordBreakProperty.txt, UNIDATA/copyright.html: Updated.
+
+	* po/ja.po, po/m17n-db.pot, po/vi.po: Re-generated.
+
+2009-02-25  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.5.4.
+
+2009-01-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/bn-itrans.mim: Modify the descrpition string for readability.
+
+	* MIM/fr-azerty.mim:
+	Correct the keyword ("documentation" -> "description").
+
+2009-01-16  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/ispell.mim, MIM/ug-kbd.mim, MIM/th-tis820.mim,
+	MIM/th-pattachote.mim, MIM/th-kesmanee.mim, MIM/ko-han2.mim,
+	MIM/ja-anthy.mim, MIM/bo-ewts.mim:
+	Canonicalise section orders.
+
+	* MIM/ja-trycode.mim: Add a new character.
+
+2009-01-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/Makefile.am (INPUT_METHOD): Add hi-typewriter.mim,
+	sa-harvard-kyoto.mim, si-wijesekera-preedit-alt.mim and
+	ta-lk-renganathan.mim
+
+2009-01-05  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/vi-viqr.mim (tone-mark): Fix the entries.
+
+2008-12-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/Makefile.am (INPUT_METHOD): Add bo-tcrc.mim.
+
+2008-11-17  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/Fontset.txt (FONT-SPEC): Add descripition of OTF-SPEC
+	and LANG-SPEC.
+
+2008-10-28  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/grc-mizuochi.mim:
+	Fix wrong input sequences (H?V -> H?v , HV? -> Hv?).
+
+2008-10-24  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/ta-lk-renganathan.mim: New file.
+
+2008-10-20  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.3 released.
+
+2008-10-20  Phan Anh Dung  <fanzung@gmail.com>  (tiny change)
+
+	* MIM/vi-telex.mim (map:consonant-ext): Don't check C-AFTER-V for
+	"dd".
+	(state:after-v, after-vc): New branch
+	ending-1st-notviet-consonant.
+
+2008-10-20  Phan Anh Dung  <fanzung@gmail.com>  (tiny change)
+
+	* MIM/vi-base.mim (map:ending-1st-notviet-consonant) New map.
+
+2008-10-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Interpret CHCHJ as CHCH J rather than CH CHJ.
+
+2008-10-09  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt:
+	Do not move H for LA's below form.  Let the fonts hadle it.
+	Exclude chillu forms from the consonant group.
+
+2008-10-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Move 'pres' from Stage 6 to Stage 4.
+
+2008-10-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt:
+	Add ZWJ to the chillu sequence passed to the OTF driver.
+	Do not move syllable-final RA to the beginning.  Let the font handle it.
+
+2008-09-25  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/si-wijesekera.mim: Remove prototypes.
+
+	* MIM/ug-kbd.mim:
+	Change the constant representation "0x062c" to "0x062C".
+
+	* MIM/si-wijesekera-preedit-alt.mim:
+	Replace "+" in state names with "--".
+	Fix typo: "yansaka" -> "yansaya".
+	Remove the state "touch".
+
+2008-09-24  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.5.3.
+
+2008-09-19  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/global.mim (-reload): Renamed from @reload.
+
+2008-09-04  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/IM.txt (variable list): Fixed.
+
+2008-08-16  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/THAI-OTF.flt (1st generator): On handling SARA-AM, keep,
+	glyph<->char correspondance.
+
+2008-08-11  VAnhTu1987  <vanhtu1987@gmail.com>  (tiny change)
+
+	* MIM/vi-base.mim (ending-1st-consonant, ending-2nd-consonant):
+	New maps.
+
+	* MIM/vi-telex.mim (map:vowel-ext): Handling of "w" and "W" fixed.
+	(consonant-ext): Handling of "dd" and the variants fixed.
+	(init:consonant-or-tone-mark): Check invalid consonant starter.
+	(after-v:ending-1st-consonant): New branch.
+	(after-vc:consonant,consonant-ext): Deleted.
+	(after-vc:ending-2nd-consonant, vowel, vowel-ex): New branches.
+
+2008-07-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FORMATS/IM.txt: Fix a typo.
+
+2008-07-25  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/grc-mizuochi.mim (map): Remove duplicated "\\" and "^".
+
+2008-07-25  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/ja-anthy.mim (starter): Remove duplication.
+
+2008-07-23  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Add new characters for Unicode 5.1.
+
+2008-07-15  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ARAB-OTF.flt, FLT/ARAB-OTF-NO-GPOS.flt:
+	Add a number of characters for Unicode 5.1.
+
+2008-07-15  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/ko-han2.mim (L-or-T-head): Change key "fmd" to "fMd" to
+	avoid conflict with the other rules.
+
+2008-07-14  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/lo-lrt.mim: Change the mark name @tone to TONE.
+
+	* MIM/si-wijesekera-preedit.mim: Use @-1, not @-, to refer to the
+	previous character.
+
+	* MIM/bo-ewts.mim: Change the marker name @BEG to BEG.
+
+2008-07-11  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/zh-util.mim (change-candidate): Escape '[' and ']'.
+
+	* MIM/vi-tcvn.mim (misc): Escape '[', ']', and '#'.
+
+	* MIM/si-wijesekera-preedit.mim (independent): Escape "'".
+
+	* MIM/si-wijesekera-preedit-alt.mim (others): Escape "'".
+
+	* MIM/si-wijesekera.mim (misc): Escape "'".
+
+	* MIM/ja-anthy.mim (henkan-edit, change-candidate): Escape '[' and
+	']'.
+
+	* MIM/bn-unijoy.mim (livekey): Escape '#'.
+
+	* MIM/ar-kbd.mim (generic): Escape '[' and ']'.
+
+2008-07-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/TELU-OTF.flt: Add TELUGU LETTER TSA,DZA (U+0C58,U+0C59) and
+	TELUGU VOWEL SIGN VOCALIC L,LL (U+0C62,U+0C63).
+
+	* FLT/ORYA-OTF.flt: Add ORIYA VOWEL SIGN VOCALIC
+	RR,L,LL (U+0B44,U+0B62,U+0B63).
+
+	* FLT/DEVA-OTF.flt: Add DEVANAGARI LETTER CANDRA A (U+0972).
+
+2008-07-03  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/unicode.mim (init): Use @-1 instead of @- to refer to the
+	previous character.
+
+	* MIM/si-wijesekera-preedit.mim: Use @-1 instead of @- to refer to
+	the previous character.
+
+	* MIM/cmc-kbd.mim: Use @-1 instead of @- to refer to the previous
+	character.
+
+2008-06-23  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.2 released.
+
+2008-06-13  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/Dir.ja.txt (dir-description): Format fixed for man-page.
+
+	* FORMATS/Dir.txt (dir-description): Format fixed for man-page.
+
+2008-06-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/bo-ewts.mim: Fix typo in key string: ">" -> ")".
+
+2008-06-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/sa-harvard-kyoto.mim: New file.
+
+2008-06-03  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/IM.ja.txt: Delete invalid "@ifnot FOR-MAN".
+
+2008-05-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/ta-itrans.mim: Add "sh" for U+0BB6 and "SRI" for the shrii
+	ligature.
+
+2008-05-30  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Versions changed to 1.5.2.
+
+	* MIM/zh-tonepy.mim (state:init): Add `shift' to the branch action
+	of enter-fullwidth-mode and enter-single-fullwidth-mode.
+
+	* MIM/zh-quick.mim (state:init): Add `shift' to the branch action
+	of enter-fullwidth-mode and enter-single-fullwidth-mode.
+
+	* MIM/zh-py.mim (state:init): Add `shift' to the branch action of
+	enter-fullwidth-mode and enter-single-fullwidth-mode.
+
+	* MIM/zh-cangjie.mim (state:init): Add `shift' to the branch
+	action of enter-fullwidth-mode and enter-single-fullwidth-mode.
+
+	* MIM/ko-romaja.mim (state:init): Add `shift' to the branch action
+	of enter-fullwidth-mode and enter-single-fullwidth-mode.
+	(state:isolated-jamo-mode): Likewise.
+
+	* MIM/cjk-util.mim (map:enter-fullwidth-mode): Don't shift.
+	(map:exit-fullwidth-mode, map:enter-single-fullwidth-mode):
+	Likewise.
+	(state:init): Add `shift' to the branch action of
+	exit-fullwidth-mode.
+
+	* MIM/zh-util.mim (map:focus-move): New map.
+	(map:focus-change): Delete (input-focus-move).
+	(state:check-unod): Add branch `focus-move'.
+	(state:select): Likewise.
+
+	* MIM/si-wijesekera.mim (map:misc): Delete "\\".
+	(map:join): New map.
+	(state:init): Add branch `join'.
+
+	* MIM/fr-azerty.mim (map:left-square-bracket): Don't shift.
+	(map:left-curly-bracket): Don't shift.
+	(map:alt-2-7, map:ctrl-2-7): Deleted.
+	(map:alt-2, map:alt-7): New maps.
+	(state:init): Add `shift' to the branch actions of
+	`left-square-bracket' and `left-curly-bracket'.  Delete branches
+	alt-2-7 and ctrl-2-7, add branches alt-2 and alt-7.
+
+	* MIM/bo-ewts.mim (map:escape): Don't shift.  Don't include "[".
+	(map:non-tibetan): New map.
+	(map:unicode): Don't shift.
+	(state:init): Add `shift' to the branch action of `escape'.
+	Include `non-tibetan' map.
+	(state:dispatch-escape): Add `shift' to the branch action of
+	`unicode'.
+
+2008-05-25  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/vi-telex.mim (after-v, after-vc): Call handle-mark after
+	backspace.
+
+	* MIM/vi-base.mim: Delete the second `description'.
+
+2008-05-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/th-tis820.mim, MIM/th-pattachote.mim, MIM/th-kesmanee.mim,
+	MIM/si-wijesekera.mim: Move the "macro" section before "map".
+
+2008-03-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/SINH-OTF.flt: Simplify "otf:sinh=+" to "=".
+
+2008-01-30  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* Version 1.5.1 released.
+
+2008-01-30  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* configure.ac: Check the program msgfmt.
+
+2008-01-29  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* MIM/vi-tcvn.mim (vowel-ext): Escape "(" by backslash in key
+	symbol names.
+
+2008-01-25  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* MIM/vi-telex.mim (vowel-ext): Add more sequences.
+
+	* icons/vi-tcvn.png: New file.
+
+	* icons/cmc-kbd.png: New file.
+
+
+2008-01-24  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* MIM/Makefile.am (INPUT_METHOD): Add vi-base.mim and vi-tcvn.mim.
+
+	* MIM/vi-tcvn.mim: New file.
+
+	* MIM/vi-base.mim: New file.
+
+	* MIM/vi-vni.mim: Fully re-written.
+
+	* MIM/vi-viqr.mim: Fully re-written.
+
+	* MIM/vi-telex.mim: Include vi-base.mim.
+
+2008-01-23  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* MIM/vi-telex.mim (handle-mark): Don't delte the previous
+	character here.
+	(after-v): When a vowel is typed, adjust tone mark place.
+	(after-t): Delete the just inserted character before calling
+	handle-mark.
+	(init): Initialize SELECT to 0.
+
+2008-01-18  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* icons/cmc-kbd.png: New file.
+
+	* MIM/cmc-kbd.mim (title): Improved.
+
+2008-01-18  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* MIM/cmc-kbd.mim: New file.
+
+	* MIM/Makefile.am (INPUT_METHOD): Add cmc-kbd.mim.
+
+	* FLT/CHAM-GENERIC.flt: Simplify the 1st stage.
+
+2008-01-17  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/CHAM-GENERIC.flt: Categorize U+AA30 in prefix vowel.
+
+2008-01-15  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* configure.ac: Version changed to 1.5.1.
+
+2008-01-11  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/Makefile.am (FONT_LAYOUT_TABLE): Add CHAM-GENERIC.flt.
+
+	* FLT/CHAM-GENERIC.flt: New file.
+
+	* SCRIPT.tbl: Add cham, rename tay_viet to tai_viet.
+
+	* generic.fst: Add cham, rename tay_viet to tai_viet.
+
+	* SCRIPT.ext: Add cham, rename tay_viet to tai_viet.
+
+2008-01-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Accept "U+0905 U+0945" as a valid
+	sequence (mainly for Marathi).
+
+2008-01-07  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/MYMR-MYAZEDI.flt: Fix the first stage to consume JWNJ.
+
+2007-12-28  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* Version 1.5.0 released.
+
+2007-12-21  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/TIBT-OTF.flt: Make a grapheme claster.
+
+2007-12-13  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/COMBINING.flt: Apply the OpenType feature mkmk too.
+
+2007-12-13  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/ja-trycode.mim: Add new definitions.
+
+2007-12-13  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/THAI-TIS620.flt: Don't encode codes by itself.
+
+	* configure.ac: Version changed to 1.5.0.
+
+	* FLT/THAI-OTF.flt: Use U+25CC (DOTTED CIRCLE) if the font has it.
+
+	* FLT/THAI-GENERIC.flt: Use U+25CC (DOTTED CIRCLE) if the font has
+	it.
+
+	* FLT/THAI-NORASI.flt: Use U+25CC (DOTTED CIRCLE) if the font has
+	it.
+
+2007-12-07  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* FLT/THAI-GENERIC.flt: Fix `font' line.
+
+2007-11-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/*.flt: Move copying condition to the end.
+
+2007-11-12  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/COMBINING.flt: New file.
+
+	* FLT/Makefile.am (FONT_LAYOUT_TABLE): Add COMBINING.flt.
+
+2007-11-08  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/DEVA-CDAC.flt: Fix typo; deve-cdac->deva-cdac.
+
+2007-10-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt, FLT/GUJR-OTF.flt:
+	Handle ZWJ correctly even if the current font does not contain it.
+
+2007-10-18  Kenichi Handa  <handa@m17n.org>
+
+	* icons/hi-typewriter.png: New file.
+
+2007-09-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt, FLT/GUJR-OTF.flt, FLT/MLYM-OTF.flt:
+	Fix regular expressions: ".+" -> "[^ ]+", ".*" -> "[^ ]*".
+
+2007-09-14  Kenichi Handa  <handa@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Fix regular expressions: ".+" -> "[^ ]+".
+
+2007-09-13  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/BENG-OTF.flt:
+	Render post-base vowel sign correctly after an independent vowel.
+
+2007-09-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/GUJR-OTF.flt: Do not break a syllable after ZWJ.
+
+2007-09-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Remove ZWJ's _after_ 'vatu' and 'pres' are applied.
+
+2007-09-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Do not break a syllable after ZWJ.
+	Allow Eyelash RA only at the beginning of a syllable.
+
+	* FLT/KHMR-OTF.flt: Simplify "otf:khmr=+" to "=".
+
+2007-08-24  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ARAB-OTF.flt: Specify OTF features explicitly.
+
+2007-08-23  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* generic.fst (gurmukhi): Change the manodatory feature to blwf.
+	(telugu): Change the mandatory feature to blwf.
+
+	* FLT/MLYM-OTF.flt: Change the mandatory feature to akhn.
+
+2007-08-23  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst (tay-viet): Fix format.
+	(malayalam): Change the mandatory feature to akhn.
+
+2007-08-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/TELU-OTF.flt: Rewritten with new algorithm.
+
+2007-08-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* MIM/bo-tcrc.mim: New file.
+
+2007-08-20  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/BENG-OTF.flt:
+	Accept 'ya-phalaa' and 'vowel sign aa' after independent vowels.
+
+2007-08-17  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt, FLT/BENG-OTF.flt, FLT/GURU-OTF.flt,
+	FLT/GUJR-OTF.flt, FLT/ORYA-OTF.flt, FLT/KNDA-OTF.flt: Exclude
+	syllables of the pattern ".*CN".
+
+	* FLT/TAML-OTF.flt: Rewritten with new algorithm.
+
+2007-08-15  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/GURU-OTF.flt: Apply haln feature in the final step.
+
+2007-08-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/GUJR-OTF.flt: Rewritten with new algorithm.
+
+2007-08-13  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/GURU-OTF.flt: Rewritten with new algorithm.
+
+2007-08-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ORYA-OTF.flt: Specify GPOS order explicitly.
+	Change "otf:orya=+" to "=".
+
+	* FLT/MLYM-OTF.flt: Specify GPOS order explicitly.
+	Change "otf:mlym=+" to "=".
+
+	* FLT/KNDA-OTF.flt: Specify GPOS order explicitly.
+	Change "otf:knda=+" to "=".
+
+	* FLT/DEVA-OTF.flt: Specify GPOS order explicitly.
+	Change "otf:deva=+" to "=".
+
+	* FLT/BENG-OTF.flt: Specify GPOS order explicitly.
+	Change "otf:beng=+" to "=".
+
+2007-07-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Rewritten with new algorithm.
+
+2007-07-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/MLYM-OTF.flt: Rewritten with new algorithm.
+
+2007-07-18  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (pkgconfigdir): Set to ${datadir}/pkgconfig.
+	(EXTRA_DIST): Add SCRIPT.awk and SCRIPT.ext.
+
+2007-07-13  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.4.0 released.
+
+2007-07-13  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst: Add an entry for tay_viet.
+
+2007-07-13  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Change versions to 1.4.0.
+
+2007-07-12  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/grc-mizuochi.mim (description): Untabify.
+
+2007-07-12  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/KNDA-OTF.flt: Rewritten with new algorithm.
+
+2007-07-10  Kenichi Handa  <handa@m17n.org>
+
+	* mdb.dir: Adjusted the entry for font layouters.
+
+2007-07-09  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Stop counting the number of pre-base glyphs
+	for matra movement.  (Unable to distinguish halant form from half
+	form.)
+
+2007-07-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ORYA-OTF.flt: Add R, B and Y to the ZWJ movement.
+
+2007-07-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/ORYA-OTF.flt: Compose consonant and nukta beforehand if
+	predefined.
+
+	* FLT/BENG-OTF.flt: Rewritten for Unicode 5.0 with new algorithm.
+
+2007-06-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Put internal mark (Z) aftter the below form
+	consonant rather than after the base consonant.
+
+2007-06-28  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Rewritten with new algorithm for Unicode 5.0.
+
+2007-06-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Avoid applying OTF features over post-base mark (Z).
+
+2007-06-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/DEVA-OTF.flt: Rewritten for Unicode 5.0.
+
+2007-06-20  Jens Petersen  <petersen@redhat.com>  (tiny change)
+
+	* MIM/da-post.mim: New file created by modifying sv-post.mim slightly.
+
+2007-06-15  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.tbl (tai_viet): Add this entry.
+
+	* LANGDATA/LANGUAGE.awk (BEGIN): Fix regluar expression for
+	extracting an English name.
+	(/^[a-z][a-z][a-z]\|/): Don't modify English names extracted from
+	"en.lnm".
+
+	* SCRIPT.ext: Change name tayviet -> tay_viet.
+
+2007-06-14  Kenichi Handa  <handa@m17n.org>
+
+	* bootstrap.sh: Adjusted for the directory structure change.
+
+	* MIM/vi-telex.mim: Make documentations gettextize.
+
+2007-06-12  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/vi-telex.mim (handle-mark): Fix condition.
+
+2007-06-11  Kenichi Handa  <handa@m17n.org>
+
+	* LANGDATA/Makefile.am (pkgdata_DATA): Cancel previous change.
+	(EXTRA_DIST): Cancel previous change.
+
+	* MIM/vi-telex.mim (alphabet): Add uppercase letters.
+
+2007-06-10  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.awk (/^[0-9A-F]+\.\./): Fix regex for matching.
+
+2007-06-08  Kenichi Handa  <handa@m17n.org>
+
+	* MIM/vi-telex.mim: Code simplified.   Handle temporary escaping
+	to English mode.
+
+2007-06-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/TELU-OTF.flt: Follow Unicode 5.0.
+	RRA U+0C31 has below-base form.
+	ZWJ does not force below-base form.
+
+2007-06-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/KNDA-OTF.flt: Exclude ZWNJ from output string.
+
+2007-06-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FLT/KNDA-OTF.flt:
+	Follow Unicode 5.0 specification of RA + ZWJ.
+	Support Nukta and vowel sign vocalic L & LL.
+	Change reference font to Kedage-n.ttf.
+
+2007-06-05  Kenichi Handa  <handa@m17n.org>
+
+	* LANGDATA/.cvsignore: Add LANGUAGE.tbl, lnconv.el.
+
+	* configure.ac (LANGNAME_TABLES): New variable.  AC_SUBST it.
+	(AC_CONFIG_FILES): Add FLT/Makefile, MIM/Makefile, LANGDATA/Makefile.
+
+	* Makefile.am (SUBDIRS): Add LANGDATA.
+	(pkgdata_DATA): Remove ${LANGNAME}
+	(MISC_TABLE): Remove LANGUAGE.tbl.
+	(LANGNAME): Delete this variable.
+	(LANGUAGE.tbl, LANGNAME.en, LANGNAME.fr): Delete these targets.
+
+	* LANGDATA/Makefile.am (pkgdata_DATA): Delete ${TABLES}.
+	(EXTRA_DIST): Remove this variable.
+	(dist_pkgdata_DATA): New variable.
+	(dist_noinst_SCRIPTS): New variable.
+	(native.ext): Don't use native.sh.
+	(CLEANFILES): New variable.
+
+	* mdb.dir (language name): Change filename.
+
+	* MIM/ja-anthy.mim (zen-nan): Fix valid value list.
+
+	* MIM/vi-telex.mim: Big changes; tripple-vowel handling, escape
+	mode, control equivocal case by a customizable variable).
+
+	* FLT/KHMR-OTF.flt: Just a cosmetic change.
+
+2007-05-31  Kenichi Handa  <handa@m17n.org>
+
+	* LANGDATA/Makefile.am: New file.
+
+	* LANGDATA/LANGUAGE.awk: Moved from ../LANGUAGE.awk.  Modified to
+	use native.ext.
+
+	* LANGDATA/.cvsignore: New file.
+
+	* LANGDATA/*.lnm: New files.
+
+	* FLT/.cvsignore: New file.
+
+2007-05-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* as-itrans.mim, bn-itrans.mim, gu-itrans.mim, hi-itrans.mim,
+	kn-itrans.mim, ml-itrans.mim, or-itrans.mim, pa-itrans.mim,
+	ta-itrans.mim, te-itrans.mim: Add keypad support.
+
+	* *.flt: Moved to the FLT subdirectory.
+
+	* *.mim: Moved to the MIM subdirectory.
+
+2007-05-29  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst (thaana): Fix typo.
+
+2007-05-21  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst (tibetan): Fix previous typo.
+
+2007-05-16  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* th-kesmanee-2.mim, th-pattachote-2.mim, th-tis820-2.mim:
+	Integrated into corresponding files and removed.
+
+	* th-tis820.mim, th-pattachote.mim: Add new variable LEVEL.
+	Use state-list identical to kesmenee's.
+
+	* th-kesmanee.mim: Add new variable LEVEL.
+	Sequence "FV3 + CONS" waits one more char before commit.
+
+	* si-wijesekera-preedit.mim: Update copyright year.
+
+2007-05-11  Kenichi Handa  <handa@m17n.org>
+
+	* LANGNAME.awk: Escape '(' and ')' in regexp.  Don't delete
+	"languages" from "Multiple languages".
+
+2007-05-10  Kenichi Handa  <handa@m17n.org>
+
+	* mdb.dir: Add an entry for "LANGNAME.*".
+
+	* .cvsignore: Add LANGUAGE.tbl, LANGNAME.en, and LANGNAME.fr.
+
+	* Makefile.am (pkgdata_DATA): Add ${LANGNAME}.
+	(LANGNAME): New variable.
+	(LANGUAGE.tbl, LANGNAME.en, LANGNAME.fr): New targets.
+
+	* LANGUAGE.awk: New file.
+
+	* LANGNAME.awk: New file.
+
+	* LANGDATA/native.txt: New file.
+
+	* LANGDATA/README: New file.
+
+	* LANGDATA/ISO-639-2.txt: New file.
+
+2007-04-12  Kenichi Handa  <handa@m17n.org>
+
+	* bo-ewts.mim: New file.
+
+	* Makefile.am (INPUT_METHOD): Add bo-ewts.mim.
+
+2007-04-11  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst (tibetan): Add a spec for OTF.
+
+2007-04-10  Kenichi Handa  <handa@m17n.org>
+
+	* bo-wylie.mim (vowel): Don't yield U+0F70 by "a".
+
+2007-04-09  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* BENG-OTF.flt: ZWNJ divides two syllables.
+
+2007-03-30  Kenichi Handa  <handa@m17n.org>
+
+	* UNIDATA/CaseFolding.txt, UNIDATA/LineBreak.txt,
+	UNIDATA/PropList.txt, UNIDATA/Scripts.txt, UNIDATA/SpecialCasing.txt,
+	UNIDATA/WordBreakProperty.txt: Files udpated.
+
+	* cjk-util.mim (fullwidth): Assign more currency signs to "$".
+
+	* SCRIPT.ext: New file.
+
+	* SCRIPT.awk: New file.
+
+	* Makefile.am (INPUT_METHOD): Add fr-azerty.mim.
+	(SCRIPT.tab): Use SCRIPT.awk to generate it.
+
+	* fr-azerty.mim: New file.
+
+2007-03-23  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera.mim: Adjust to new semantics of @-1, @-2, etc.
+
+	* SINH-OTF.flt, si-wijesekera.mim: Enable repaya.
+
+	* FORMATS/IM.txt, FORMATS/IM.ja.txt:
+	Update description of @-0, @-N, and @+N.
+
+2007-02-27  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARAB.flt, ARAB-OTF.flt, ARAB-OTF-NO-GPOS.flt: Fix typo.
+
+2007-02-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FORMATS/IM-tut.txt: Fix typo.
+
+2007-02-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FORMATS/IM-tut.txt: Fix typo.
+
+2007-02-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FORMATS/IM-tut.txt: Fix typo.
+
+2007-02-01  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/IM-tut.txt: New file.
+
+2007-01-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* FORMATS/IM.txt: Elaborate on KEYSEQ in Input Method.
+
+2007-01-16  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* sk-kbd.mim: Delete erroneous ("a" "ttt") from map.
+
+2006-12-15  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (CASE-C.tab): Use printf instead of print for
+	printing `\'.
+
+2006-12-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Update FSF postal address.
+
+2006-12-06  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.3.4 released.
+
+	* FORMATS/CharsetList.ja.txt: Change doxygen tag to "ja".
+
+2006-12-05  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (INPUT_METHOD): Add si-wijesekera-preedit.mim.
+
+2006-12-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera-preedit.mim:
+	Renamed file.  Formerly known as si-wijesekera-preedit2.mim.
+
+	* si-wijesekera-preedit-alt.mim:
+	Renamed file.  Formerly known as si-wijesekera-preedit.mim.
+
+	* si-wijesekera.mim: Add a few description.
+
+2006-12-05  Kenichi Handa  <handa@m17n.org>
+
+	* icons/th-pattacgite-2.png, icons/th-pattachote-2.png: New icon file.
+
+	* ru-kbd.mim: Add comment.  Fix description.
+
+	* icons/th-kesmanee-2.png, icons/th-pattacgite-2.png, icons/th-pattachote.png, icons/th-tis820-2.png, icons/th-tis820.png:
+	New icon files.
+
+2006-12-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ja-trycode.mim: Add URL for the usage.
+
+	* Makefile.am (INPUT_METHOD): Add ja-trycode.mim
+
+	* ja-trycode.mim: New file.
+
+2006-12-01  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (INPUT_METHOD): Add grc-mizuochi.mim and ug-kbd.mim.
+
+2006-11-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera-preedit2.mim: New file.
+
+2006-11-28  Kenichi Handa  <handa@m17n.org>
+
+	* global.mim: Gettextize decriptions.
+
+	* .cvsignore: Add more files.
+
+	* configure.ac: Call AM_GNU_GETTEXT with the arg "[external]".
+
+	* Makefile.am (BLOCK.tab): New target.
+
+	* ABOUT-NLS: Updated by gettextize.
+
+	* BLOCK.tab: Updated from Blocks-5.0.0.txt.
+
+2006-11-28  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (EXTRA_DIST): Add config.rpath.
+
+2006-11-24  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (INPUT_METHOD): Change bopo-kbd.mim to
+	zh-bopomofo.mim.
+
+2006-11-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera-preedit.mim, grc-mizuochi.mim: New file
+
+2006-11-20  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ug-kbd.mim: New file.
+
+2006-11-16  Kenichi Handa  <handa@m17n.org>
+
+	* vi-telex.mim: Handle tone-cancellation key 'z'.  Make Backspce
+	delete the previous character instead of undoing.  Another fix for
+	double vowel.
+
+2006-11-16  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* zh-bopomofo.mim: Renamed from bopo-kbd.mim to zh-bopomofo.mim.
+
+2006-10-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* th-kesmanee.mim: Merge the surrounding text version and the
+	preedit version.
+
+2006-10-30  Kenichi Handa  <handa@m17n.org>
+
+	* vi-telex.mim: Another fix for double vowel.
+
+2006-10-26  Kenichi Handa  <handa@m17n.org>
+
+	* vi-telex.mim (after-vc): Fix typo: d-var -> d-bar.
+
+2006-10-20  Kenichi Handa  <handa@m17n.org>
+
+	* vi-telex.mim: Fix for double vowels and double consonants.
+
+2006-10-19  Kenichi Handa  <handa@m17n.org>
+
+	* vi-telex.mim: Full rewrite to allow typing diacritical marks
+	at the end of syllable.
+
+2006-10-02  Kenichi Handa  <handa@m17n.org>
+
+	* MLYM-RACHANA.flt: Add pad for a combining character appearing by
+	itself.
+
+2006-09-28  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera.mim: Change the title string.
+	Change combuva -> kombuva.
+
+2006-09-26  Kenichi Handa  <handa@m17n.org>
+
+	* kk-arabic.mim: Augment description.
+
+	* ko-han2.mim: Comment improved.
+
+	* FORMATS/IM.ja.txt: Add description about gettext.
+
+	* FORMATS/IM.txt: Add description about gettext.
+
+2006-09-22  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Change versions to 1.3.4.  Call AM_GNU_GETTEXT.
+
+	* bootstrap.sh: Call aclocal with "-I m4".  Produce
+	po/POTFILES.in.
+
+	* unicode.mim: Gettextize decriptions.
+
+	* po, m4: New directories.
+
+2006-09-21  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add po.
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): Add config.rpath, mkinstalldirs, m4/ChangeLog.
+	* configure.ac (AC_CONFIG_FILES): Add po/Makefile.in.
+
+2006-09-15  Kenichi Handa  <handa@m17n.org>
+
+	* UNIDATA/UnicodeData.txt: Updated.
+
+2006-09-07  Kenichi Handa  <handa@m17n.org>
+
+	* unicode.mim (prompt): New variable.
+	(start): New command.
+
+	* global.mim: New file.
+
+	* Makefile.am (INPUT_METHOD): Delete command.mim and
+	variable.mim.  Add global.mim.
+
+2006-09-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* th-tis820-2.mim: Change title-text to KHO THAHAN.
+	Include tis820 state instead of tis820 map and kesmanee state.
+
+	* th-tis820.mim: Change title-text to KHO THAHAN.
+	Copy state-list rather than including.
+
+	* th-pattachote-2.mim: Change title-text to KHO THAHAN.
+	Include pattachote state instead of pattachote map and kesmanee state.
+
+	* th-pattachote.mim: Change title-text to KHO THAHAN.
+	Copy state-list rather than including.
+
+	* th-kesmanee-2.mim, th-kesmanee.mim: Change title-text to THO THAHAN.
+
+2006-09-02  Kenichi Handa  <handa@m17n.org>
+
+	* vi-telex.mim: Big change for supporting backspace well.
+
+2006-08-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am: Add th-kesmanee-2.mim, th-pattachote.mim,
+	th-pattachote-2.mim, th-tis820.mim, and th-tis820-2.mim.
+
+	* th-tis820-2.mim, th-tis820.mim, th-pattachote-2.mim,
+	th-pattachote.mim, th-kesmanee-2.mim: New input methods.
+
+	* th-kesmanee.mim: Introduce WTT 2.0 level 1 input sequence
+	correction.
+
+2006-08-16  Mikiko Nisikimi  <nisikimi@m17n.org>
+
+	* FORMATS/CharsetList.ja.txt: japanese version added
+
+2006-07-26  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* THAI-OTF.flt: Elaborate category.
+
+2006-07-24  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* THAI-OTF.flt: New file.
+
+	* LAOO-OTF.flt: Simplify category.  Add syllable segmentation.
+
+	* truetype.fst, mdb.dir, Makefile.am: Add an entry for Thai OTF.
+
+2006-07-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>  (tiny change)
+
+	* th-kesmanee.mim: Several keys fixed.
+
+2006-07-21  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst: Add an entry for Thai OTF.
+
+2006-07-14  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.tbl (arabic):  Delete #x656, add #x621.
+
+2006-07-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* LAOO-OTF.flt, mdb.dir, default.fst, truetype.fst, Makefile.am:
+	Add support for Lao OTF.	
+
+2006-07-10  Kenichi Handa  <handa@m17n.org>
+
+	* ru-phonetic.mim: New input method.
+
+	* Makefile.am (INPUT_METHOD): Add ru-phonetic.mim.
+
+2006-07-03  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.tbl: Fix typos (#XXXX -> #xXXXX).
+
+2006-06-30  Kenichi Handa  <handa@m17n.org>
+
+	* SCRIPT.tbl (greek): Add representative characters.
+
+	* LANGUAGE.tbl (ja): Change representative characters.
+
+2006-06-23  Kenichi Handa  <handa@m17n.org>
+
+	* mdb.dir: Add an entry for SCRIPT.tbl.
+
+	* SCRIPT-OTF.tbl: Add tailing spaces if necessary.
+
+	* Makefile.am (MISC_TABLE): Add SCRIPT.tbl.
+
+	* SCRIPT.tbl: New file.
+
+2006-05-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* KHMR-OTF.flt: Fix typo.
+
+2006-05-23  Kenichi Handa  <handa@m17n.org>
+
+	* unicode.mim: Shorten the first line of description.
+
+	* syrc-phonetic.mim: Add period in the first line of description.
+
+	* vi-vni.mim: Add period in the first line of description.
+
+	* latn-post.mim: Fix typo (decsription->description).
+
+2006-02-28  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ta-itrans.mim: Fix bug for "J" and "z" in the consonant map.
+
+2006-02-27  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARAB-OTF.flt, ARAB-OTF-NO-GPOS.flt: Update for Unicode 4.1.
+
+2006-02-23  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera.mim: Add Delete handling.
+	Use <= and >= rather than < and > when appropriate.
+
+2006-02-22  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Change versions to 1.3.3.
+
+2006-02-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera.mim: Fix bug in BackSpace handling.
+
+2006-02-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* hi-itrans.mim, kn-itrans.mim, ml-itrans.mim, ta-itrans.mim,
+	te-itrans.mim: Add ("E") in the starter map.  Add "ee" and "oo"
+	for "E" and "O" in the independent and dependent maps.
+
+2006-02-06  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.3.2 released.
+
+2006-02-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* default.fst, truetype.fst: Add kedage and mallige for Kannada.
+
+	* gu-itrans.mim, kn-itrans.mim, ta-itrans.mim, bn-itrans.mim,
+	hi-itrans.mim, pa-itrans.mim, te-itrans.mim: Follow ITRANS
+	official page.
+
+	* as-itrans.mim, gu-itrans.mim, kn-itrans.mim, or-itrans.mim,
+	ta-itrans.mim, bn-itrans.mim, hi-itrans.mim, ml-itrans.mim,
+	pa-itrans.mim, te-itrans.mim: Remove the "finish" state and change
+	mode to emacs-lisp.
+
+2006-02-03  Kenichi Handa  <handa@m17n.org>
+
+	* xfont.fst (cyrillic): Add microsoft-cp1251.
+
+	* default.fst (cyrillic): Add microsoft-cp1251.
+
+	* configure.ac: Change versions to 1.3.2.
+
+2006-02-01  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* TAML-OTF.flt: Add special ligature SRI.
+
+2006-02-01  Kenichi Handa  <handa@m17n.org>
+
+	* MYMR-MYAZEDI.flt: Fix glyph substitutions for U+1014 and
+	U+101B.  Adjust position of wide subconsonants.
+
+2006-01-17  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-samanala.mim: Remove the "final" state.
+	Merge the "sign" map with "independent".
+	Change reference URL.
+
+2006-01-16  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.3.1 released.
+
+2006-01-16  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (pkgconfigdir, pkgconfig_DATA): New variables.
+
+	* m17n-db.pc.in: New file.
+
+	* configure.ac: Change versions to 1.3.1.  Add m17n-db.pc in
+	AC_CONFIG_FILES.
+
+	* ja-anthy.mim (choose): New map.
+	(init): Handle choose.
+
+2006-01-06  Kenichi Handa  <handa@m17n.org>
+
+	* ko-han2.mim (init): Initialize L to 0.
+
+2006-01-05  Kenichi Handa  <handa@m17n.org>
+
+	* latn-pre.mim: Fix typo; decsription->description
+
+	* command.mim: Escape numbers by '\' to make them symbols.
+
+	* ko-han2.mim: Fix handling of Backspace key.
+
+2005-12-22  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.3.0 released.
+
+2005-12-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ORYA-OTF.flt: Add pres in step 5 for workaround.
+
+2005-12-20  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ORYA-OTF.flt: Stricter check in Step 4.
+
+2005-12-20  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (SUBDIRS): Add icons.
+	(INPUT_METHOD): Add ru-kbd.mim.
+
+	* configure.ac: Setup the var ICONS.  Add icons/Makefile in
+	AC_CONFIG_FILES.
+
+	* icons: New directory and new icon image files in it.
+
+	* FORMATS/*.png, FORMATS/*.eps: Moved to m17n-docs package.
+
+2005-12-07  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (EXTRA_DIST): Add BLOCK.tab.
+
+2005-12-07  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera.mim: Use unhandle for backspace.
+
+2005-12-05  Kenichi Handa  <handa@m17n.org>
+
+	* mdb.dir: Add an entry for BLOCK.tab.
+
+	* lo-kbd.mim: New file.
+
+	* Makefile.am (INPUT_METHOD): Add lo-kbd.mim.
+
+	* LAOO-GENERIC.flt: Fix previous change.
+
+	* THAI-GENERIC.flt: Improve handling of tall consonants and SARA
+	AM.
+
+2005-12-02  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (CHAR_TABLE): Add BLOCK.tab.
+
+	* BLOCK.tab: New file.
+
+	* LANGUAGE.tbl (zh): Add extra characters.
+	(ja): Likewise.
+
+	* generic.fst: Fix the entry for khmer, add entries for hiragana
+	and katakana.
+
+	* LAOO-GENERIC.flt: Improve handling of tall consonants and vowel AM.
+
+	* LAOO-ALICE.flt: Fix previous change.
+
+2005-11-28  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-wijesekera.mim: Disable repaya.  Fix typo.
+
+2005-11-26  Kenichi Handa  <handa@m17n.org>
+
+	* LAOO-ALICE.flt: Improve handling of tall consonants and vowel AM.
+
+2005-11-24  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* SINH-OTF.flt: Support 0x0DDC + 0x0DCA -> 0x0DDD.
+
+2005-11-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am: Add si-wijesekera.mim.
+
+	* si-wijesekera.mim: New file.
+
+	* SINH-OTF.flt: Suppress repaya form.
+
+2005-11-21  Kenichi Handa  <handa@m17n.org>
+
+	* command.mim: New file.
+
+	* Makefile.am (INPUT_METHOD): Include command.mim.
+	(MISC_TABLE): Don't include im-cmd.tbl.
+
+	* ja-anthy.mim: Use global command convert and commit.
+
+	* unicode.mim (backspace): New map.
+	(init-hex): Use cond and expressions.
+
+	* mdb.dir: Delete an entry for "im-cmd.tbl".
+
+2005-11-08  Kenichi Handa  <handa@m17n.org>
+
+	* zh-py.mim, zh-tonepy.mim, zh-quick.mim, zh-cangjie.mim: Don't
+	initialize candidates-group-size.
+
+	* zh-tonepy-b5.mim, zh-tonepy-gb.mim, zh-py-gb.mim, zh-py-b5.mim:
+	Don't initialize candidates-group-size, give nil documemnt to
+	candidates-charset.
+
+2005-11-01  Kenichi Handa  <handa@m17n.org>
+
+	* zh-py.mim, zh-tonepy.mim: Reorder characters by frequency
+	information in Unihan database.
+
+	* Makefile.am (INPUT_METHOD): Add zh-cangjie.mim, zh-quick.mim,
+	and variable.mim.
+
+	* zh-cangjie.mim, zh-quick.mim: New files.
+
+	* variable.mim: New file.
+
+2005-10-28  Kenichi Handa  <handa@m17n.org>
+
+	* zh-tonepy.mim: Remove maps (backspace, return focus-change) and
+	states (check-undo, select).  Include zh-util.mim.  Add
+	variable (candidates-group-size).
+
+	* ko-romaja.mim (Backspace): Undo only when the current key
+	sequence is not empty.  Otherwise unhandle it.
+
+2005-10-28  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* syrc-phonetic.mim, bn-unijoy.mim, dv-phonetic.mim: Change M- to A-.
+
+2005-10-26  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (INPUT_METHOD): Add zh-tonepy-gb.mim,
+	zh-tonepy-b5.mim, and zh-util.mim.
+
+	* ko-romaja.mim: Include all states of cjk-util.
+
+	* zh-py.mim: Remove maps (backspace, return focus-change) and
+	states (check-undo, select).  Include zh-util.
+
+	* zh-util.mim: New file.
+
+	* cjk-util.mim: Remove title, map (choose and change-candidate),
+	state (init).
+
+	* zh-tonepy-gb.mim, zh-tonepy-b5.mim: New input methods.
+
+2005-10-22  Kenichi Handa  <handa@m17n.org>
+
+	* m17n-db.in: Handle wildcard entry.
+
+2005-10-20  Kenichi Handa  <handa@m17n.org>
+
+	* ja-anthy.mim, zh-py.mim, zh-tonepy.mim: Fix an argument to undo.
+
+	* generic.fst (khmer): Add an entry for an OTF font.
+
+	* romaji.mim: Deleted.
+
+	* am-sera.mim, bn-unijoy.mim, bo-wylie.mim, bopo-kbd.mim,
+	cjk-util.mim, dv-phonetic.mim, el-kbd.mim, fa-isiri.mim,
+	generic.fst, he-kbd.mim, hr-kbd.mim, hy-kbd.mim, ispell.mim,
+	ka-kbd.mim, kk-arabic.mim, kk-kbd.mim, km-yannis.mim, ko-han2.mim,
+	ko-romaja.mim, latn-post.mim, latn-pre.mim, lo-lrt.mim,
+	my-kbd.mim, rfc1345.mim, romaji.mim, ru-yawerty.mim,
+	si-samanala.mim, sk-kbd.mim, sr-kbd.mim, sv-post.mim,
+	syrc-phonetic.mim, th-kesmanee.mim, unicode.mim, vi-telex.mim,
+	vi-viqr.mim, vi-vni.mim, zh-tonepy.mim:  Add input-method and
+	descrition elements.
+
+2005-10-19  Kenichi Handa  <handa@m17n.org>
+
+	* ar-kbd.mim, as-itrans.mim, bn-itrans.mim, gu-itrans.mim,
+	hi-itrans.mim, kn-itrans.mim, ml-itrans.mim, or-itrans.mim,
+	pa-itrans.mim, ta-itrans.mim, te-itrans.mim: Delete ';;; <li> ...'
+	lines.  Add input-method and description elements.
+
+	* ja-tcode.mim, zh-pinyin.mim: Delete ';;; <li> ...' lines.  Add
+	input-method and description elements.
+
+	* ja-anthy.mim: Delete ';;; <li> ...' lines.  Fix descpription
+	element.
+
+	* zh-py.mim: Delete ';;; <li> ...' lines.
+
+2005-10-18  Kenichi Handa  <handa@m17n.org>
+
+	* mdb.dir: Replace all (input-method ...) to single one of using a
+	wildcard.
+
+	* ja-anthy.mim: Add input-method, descrition, variable, and
+	command sections.
+
+	* ko-han2.mim: Add input-method and descrition sections.
+
+	* ko-romaja.mim: Add input-method and descrition sections.
+	Include cjk-util.
+
+	* CHARSET.tbl: New charset unicode-bmp.
+
+	* Makefile.am (INPUT_METHOD): Add zh-py-gb.mim, zh-py-b5.mim,
+	cjk-util.mim.
+
+	* zh-py-gb.mim, zh-py-b5.mim, cjk-util.mim: New input methods.
+
+	* zh-py.mim: Add input-method, descrition, and variable sections.
+	Re-format `pinyin' map.
+
+2005-10-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* sr-kbd.mim, kk-kbd.mim, ka-kbd.mim, he-kbd.mim, el-kbd.mim,
+	ar-kbd.mim, bopo-kbd.mim, my-kbd.mim, sk-kbd.mim, hy-kbd.mim,
+	hr-kbd.mim:
+	Fix typo.
+
+2005-10-03  Kenichi Handa  <handa@m17n.org>
+
+	* vi-vni.mim: New input method.
+
+	* mdb.dir: Add vi-vni.mim.
+
+2005-09-16  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (SOFT-DOTTED.tab): Fix typo: "\.\."->"\\.\\.".
+
+	* CASE-MAPPING.awk: Delete space between function name and '('.
+
+	* FORMATS/IM.txt (PUSHBACK): Add descrition for (pushback KEYSEQ).
+
+	* zh-py.mim (map:focus-change): New map.
+	(state:main): Don't handle the map backspace here.
+	(state:check-undo): New state.
+	(state:select): Handle the map focus-change.
+	
+	* ko-romaja.mim (map:uppercase): New map.
+	(map:L): Delete uppercase keys from this map.
+	(map:toggle-isolated-jamo): Toggle the value of ISOLATED.
+	(state:init): Check ISOLATED in the initial action.
+	(state:isolated): Shift ot init when a character is decided.
+
+2005-09-10  Kenichi Handa  <handa@m17n.org>
+
+	* zh-py.mim (main): Don't handle backspace here.  When an unknown
+	key is typed, shift to check-undo.
+	(check-undo): New state.
+
+2005-09-12  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am: Change command lines of CASED.awk and CASE-MAPPING.awk.
+
+	* CASE-MAPPING.awk, CASED.awk: Use FILENAME built-in variable.
+
+2005-09-09  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* CASE-MAPPING.awk: Insert \ before # for auto-indent.
+
+2005-09-06  Kenichi Handa  <handa@m17n.org>
+
+	* CASED.awk: Fix indentation.  Delete spaces between a functiuon
+	name and '('.
+
+2005-09-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* CASE-MAPPING.awk, CASED.awk: New file.
+
+	* Makefile.am, mdb.dir:
+	Add CASED.tab, SOFT-DOTTED.tab, and CASE-MAPPING.tab.
+
+	* KHMR-OTF.flt: Add (r)? after HR in Step 0.
+
+2005-09-05  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst: New file.
+
+2005-09-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* CASE-MAPPING.awk, CASED.awk: New file.
+
+	* Makefile.am, mdb.dir:
+	Add CASED.tab, SOFT-DOTTED.tab, and CASE-MAPPING.tab.
+
+	* KHMR-OTF.flt: Add (r)? after HR in Step 0.
+
+2005-09-05  Kenichi Handa  <handa@m17n.org>
+
+	* generic.fst: New file.
+
+2005-09-02  Kenichi Handa  <handa@m17n.org>
+
+	* LINEBREAK.tab: Delete it
+
+2005-09-02  Hari Prasad Nadig <hpnadig@gmail.com>  (slight change)
+
+	* kn-itrans.mim: Change several key mappings.
+
+2005-09-02  Kenichi Handa  <handa@m17n.org>
+
+	* UNIDATA/LineBreak.txt: New file.
+
+	* configure.ac: Change versions to 1.3.0.
+
+	* mdb.dir: Add ARAB-OTF-NO-GPOS.flt, LAOO-GENERIC.flt,
+	THAI-GENEIRC.flt, generic.fst, LANGUAGE.tbl, SCRIPT-OTF.tbl, and
+	SCRIPT-LANGUAGE.tbl.
+
+	* Makefile.am (CHAR_TABLE): Add LINEBREAK.tab.
+	(FONT_LAYOUT_TABLE): Add ARAB-OTF-NO-GPOS.flt, LAOO-GENERIC.flt,
+	and THAI-GENERIC.flt.
+	(MISC_TABLE): Add generic.fst, SCRIPT-OTF.tbl, and
+	SCRIPT-LANGUAGE.tab.
+	(SCRIPT.tab): Make the default to `common'.
+	(LINEBREAK.tab): New target.
+
+	* LINEBREAK.awk: New file.
+
+2005-08-25  Kenichi Handa  <handa@m17n.org>
+
+	* THAA-OTF.flt: Drive only mark GPOS.
+
+	* NO-CTL.flt: Include all unicode range in the category C.
+
+	* MYMR-MYAZEDI.flt: Fix type in 4th stage; 0x102E->0x102D.
+
+	* MLYM-OTF.flt: Fix typo mlum -> mlym.
+
+	* FONTENC.tbl (cp1251): Add this entry.
+	(cmex10, cmmi10, cmr10, cmsy10 msam10 msbm10 wasy10): Make them
+	usable only with proper FLTs.
+
+	* THAI-GENERIC.flt: New file.
+
+	* SCRIPT-LANGUAGE.tbl: New file.
+
+	* LAOO-GENERIC.flt: New file
+
+	* LANGUAGE.tbl: New file.
+
+	* SCRIPT-OTF.tbl: New file.
+
+	* ARAB-OTF-NO-GPOS.flt: New file.
+
+2005-07-26  Kenichi Handa  <handa@m17n.org>
+
+	* ko-romaja.mim: Add more romanization keys.  Use "I" for toggling
+	isolated Jamo input mode.
+
+2005-08-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* KHMR-OTF.flt: New file.
+
+	* Makefile.am: Add KHMR-OTF.flt.
+
+	* mdb.dir, default.fst, truetype.fst: Add khmr-otf.
+
+2005-08-15  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* UNIDATA/WordBreakProperty.txt, UNIDATA/SpecialCasing.txt,
+	UNIDATA/PropList.txt: New files.
+
+2005-08-12  Kenichi Handa  <handa@m17n.org>
+
+	* UNIDATA/CaseFolding.txt, UNIDATA/README, UNIDATA/Scripts.txt,
+	UNIDATA/UnicodeData.txt: Files updated
+
+2005-07-27  Mikiko Nisikimi  <nisikimi@m17n.org>
+
+	* FORMATS/FLT.ja.txt: Fix the document.
+
+2005-07-26  Kenichi Handa  <handa@m17n.org>
+
+	* ko-romaja.mim: Add more romanization keys.  Use "I" for toggling
+	isolated Jamo input mode.
+
+2005-07-22  Mikiko Nisikimi  <nisikimi@m17n.org>
+
+	* FORMATS/Dir.ja.txt: *** empty log message ***
+
+2005-07-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* truetype.fst, default.fst: Add lohit punjabi.
+
+	* GURU-OTF.flt: Add GSUB features.
+
+2005-07-21  Kenichi Handa  <handa@m17n.org>
+
+	* zh-py.mim: Add several more pinyin data. Map "pinyin" is
+	replaced by the one generated from Unihan.txt.
+
+	* UNIDATA/copyright.html:
+	New file copied from http://www.unicode.org/copyright.html.
+
+2005-07-12  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* te-itrans.mim, ta-itrans.mim, pa-itrans.mim, or-itrans.mim,
+	ml-itrans.mim, kn-itrans.mim, hi-itrans.mim, gu-itrans.mim,
+	bn-itrans.mim, as-itrans.mim: Fix typo.
+
+2005-06-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* mdb.dir, default.fst, truetype.fst: Add tibt-otf.
+
+	* Makefile.am: Add TIBT-OTF.flt.
+
+	* TIBT-OTF.flt: New file.
+
+2005-06-20  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* truetype.fst: Fix typo in registry of raghindi.
+
+2005-06-17  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* default.fst, truetype.fst:
+	Add gargi_1.7 because it does not have "gargi" as family name.
+
+2005-06-09  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* default.fst, truetype.fst:
+	Change gargi-1.3 to gargi so that newer fonts can also be used.
+
+2005-06-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* default.fst: Change Sinhala font download site.
+
+2005-06-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* default.fst, truetype.fst: Add mlym-rachana.
+
+	* mdb.dir, Makefile.am: Add MLYM-RACHANA.flt.
+
+	* MLYM-RACHANA.flt: New file.
+
+2005-05-24  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* truetype.fst, default.fst: Rechange default to MuktiNarrow.ttf.
+
+	* SINH-OTF.flt: Fix copyright years.
+
+	* BENG-OTF.flt: Add LETTER KHANDA TA (U+09CE).
+
+	* ARAB-OTF.flt: Add DOTTED CIRCLE U+25CC.
+
+2005-05-13  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* bn-unijoy.mim: New file.
+
+	* Makefile.am, mdb.dir: Add bn-unijoy.mim.
+
+	* truetype.fst, default.fst: Add sagar for Bengali.
+
+2005-04-18  Kenichi Handa  <handa@m17n.org>
+
+	* LINEBREAK.tab: New file.
+
+	* ja-anthy.mim (description, variable, command): New spec.
+
+	* mdb.dir: Add entries for im-cmd.tbl and LINEBREAK.tab.
+
+	* im-cmd.tbl: New file.
+
+	* Makefile.am (MISC_TABLE): Include LINEBREAK.tab.
+
+2005-03-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* SINH-OTF.flt: Pre-matra is put to the left of consonant ligature.
+
+2005-02-15  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: For Hebrew, prefer freesans font.
+
+	* Makefile.am (INPUT_METHOD): Add sv-post.mim and zh-tonepy.mim.
+
+	* mdb.dir: Add sv-post.mim and zh-tonepy.mim.
+
+	* sv-post.mim, zh-tonepy.mim: New input method.
+
+2005-02-15  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ORYA-OTF.flt: Disable VMabove reordering in Step 2.
+
+2004-12-27  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.2.0 released.
+
+2004-12-27  Kenichi Handa  <handa@m17n.org>
+
+	* m17n-db.in: Doxygen's page and section name fixed.
+
+	* ko-romaja.mim: Make Shift-SPC key commit the current preedit.
+
+	* latn-pre.mim: New input method.
+
+	* mdb.dir, Makefile.am: Add latn-pre.mim.
+
+2004-12-20  Kenichi Handa  <handa@m17n.org>
+
+	* my-kbd.mim: Add more keys.
+
+2004-12-20  Kenichi Handa  <handa@m17n.org>
+
+	* MYMR-MYAZEDI.flt: Adjusted for the new way of Kinzi encoding.
+	Add special rules for U+1014 and U+101B.
+
+2004-12-10  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Change versions to 1.2.0.
+
+2004-12-07  Kenichi Handa  <handa@m17n.org>
+
+	* zh-pinyin.mim: New file.
+
+	* mdb.dir, Makefile.am: Add zh-pinyin.mim.
+
+2004-11-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* bopo-kbd.mim, FORMATS/bopo-kbd.png, FORMATS/bopo-kbd.eps: New files.
+
+	* mdb.dir, Makefile.am: Add bopo-kbd.mim.
+	
+	* FORMATS/hy-kbd.png, FORMATS/hy-kbd.eps: New files.
+
+	* hy-kbd.mim: Add image file information (hy-kbd.png & hy-kbd.eps).
+
+2004-11-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* hy-kbd.mim: New file.
+
+	* mdb.dir, Makefile.am: Add hy-kbd.mim.
+
+2004-10-22  Kenichi Handa  <handa@m17n.org>
+
+	* FONTENC.tbl: Give `nil' encoding to those fonts that can't be
+	used without a FLT.
+
+	* ko-romaja.mim: New file.
+
+	* mdb.dir, Makefile.am: Add ko-romaja.mim.
+
+2004-10-21  Kenichi Handa  <handa@m17n.org>
+
+	* ko-han2.mim: Fix rule for "J"->HJF.
+
+2004-10-15  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Change naming convention.
+	Script names : ISO 15924 (four letter codes)
+	Language names : ISO 639-1 (two letter codes)
+	
+	* ARAB-OTF.flt:     renamed from ARABIC-OTF.flt
+	* ARAB.flt:         renamed from ARABIC.flt
+	* BENG-OTF.flt:     renamed from BEN-OTF.flt
+	* DEVA-CDAC.flt:    renamed from DEV-CDAC.flt
+	* DEVA-OTF.flt:     renamed from DEV-OTF.flt
+	* GUJR-OTF.flt:     renamed from GUJ-OTF.flt
+	* GURU-OTF.flt:     renamed from GUR-OTF.flt
+	* HEBR-FF.flt:      renamed from HEBREW-FF.flt
+	* HEBR.flt:         renamed from HEBREW.flt
+	* KNDA-OTF.flt:     renamed from KAN-OTF.flt
+	* KHMR-ANLONG.flt:  renamed from KHMER-ANLONG.flt
+	* KHMR-MULE.flt:    renamed from KHMER-MULE.flt
+	* LAOO-ALICE.flt:   renamed from LAO-ALICE.flt
+	* LAOO-MULE.flt:    renamed from LAO-MULE.flt
+	* MLYM-CDAC.flt:    renamed from MLM-CDAC.flt
+	* MLYM-OTF.flt:     renamed from MLM-OTF.flt
+	* MYMR-MYAZEDI.flt: renamed from Mymr-MyaZedi.flt
+	* ORYA-OTF.flt:	    renamed from ORI-OTF.flt
+	* SYRC-OTF.flt:     renamed from SYRIAC-OTF.flt
+	* TAML-CDAC.flt:    renamed from TML-CDAC.flt
+	* TAML-OTF.flt:     renamed from TML-OTF.flt
+	* TELU-OTF.flt:     renamed from TEL-OTF.flt
+	* THAA-OTF.flt:     renamed from THAANA-OTF.flt
+	* TIBT-MTIB.flt:    renamed from TIB-MTIB.flt
+	* TIBT-MULE.flt:    renamed from TIB-MULE.flt
+
+	* as-itrans.mim:    renamed to asm-itrans.mim
+	* bn-itrans.mim:    renamed to bng-itrans.mim
+	* hi-itrans.mim:    renamed to dev-itrans.mim
+	* gu-itrans.mim:    renamed to gjr-itrans.mim
+	* km-yannis.mim:    renamed to kh-yannis.mim
+	* kn-itrans.mim:    renamed to knd-itrans.mim
+	* latn-post.mim:    renamed to latin-post.mim
+	* ml-itrans.mim:    renamed to mlm-itrans.mim
+	* or-itrans.mim:    renamed to ori-itrans.mim
+	* pa-itrans.mim:    renamed to pnj-itrans.mim
+	* ta-itrans.mim:    renamed to tml-itrans.mim
+	* te-itrans.mim:    renamed to tlg-itrans.mim
+	
+	* Makefile.am, mdb.dir, defaults.fst, truetype.fst:
+	Changed accordingly.
+
+2004-10-14  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* kh-yannis.mim: Fix typo.
+
+	* dv-phonetic.mim, syrc-phonetic.mim: New file.
+
+	* SYRIAC-OTF.flt: Add Arabic marks as transparent.
+
+	* SYRIAC-OTF.flt: Change RE pattern [^U] to [DRAr].
+
+2004-10-12  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* si-samanala.mim, Makefile.am, mdb.dir:
+	Add Sinhala input method.
+
+2004-09-23  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* SYRIAC-OTF.flt, default.fst, mdb.dir, truetype.fst, Makefile.am:
+	Add Syriac support.
+
+2004-09-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* SINH-OTF.flt, default.fst, mdb.dir, truetype.fst, Makefile.am:
+	Add Sinhala support.
+
+2004-09-22  Kenichi Handa  <handa@m17n.org>
+
+	* ARABIC-OTF.flt: Accept Arabic presentation forms in input.
+
+	* Mymr-MyaZedi.flt: Various fixes.
+
+2004-09-21  Kenichi Handa  <handa@m17n.org>
+
+	* DEV-OTF.flt: Change 0xXXXX -> #xXXXX, [ -> \[, ] -> \].
+
+2004-09-17  Kenichi Handa  <handa@m17n.org>
+
+	* FORMATS/IM.ja.txt: Fix coding: tag to euc-jp.
+
+	* TML-CDAC.flt: Fix reordering position of left part of vowels O,
+	OO, AU.
+
+2004-09-13  Kenichi Handa  <handa@m17n.org>
+
+	* ARABIC-OTF.flt: Explicitly combine a consotant with following
+	vowels.
+
+	* THAANA-OTF.flt: Add explicit combinding rule.
+
+	* ARABIC.flt: Accepts Arabic presentation forms in input.
+
+	* truetype.fst: Delete superfluous ')'.
+
+2004-09-02  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* BEN-OTF.flt: K.SS.NNA makes a ligature.  K.SS.NA does not.
+
+	* default.fst: Give priority to likhan for Bengali.
+
+2004-08-16  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am, truetype.fst, default.fst, mdb.dir:
+	Adjusted for the name change (MYANMAR-ZEDI.flt -> Mymr-MyaZedi.flt).
+
+	* Mymr-MyaZedi.flt: Renamed from MYANMAR-ZEDI.flt.
+
+	* MYANMAR-ZEDI.flt:
+	Fix for the case of preferring Medial Ra to Kinzi.  For for the case
+	of Medial Ra with single-width consonant to wide subscript.
+
+2004-08-16  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.1.0 released.
+
+2004-08-16  Kenichi Handa  <handa@m17n.org>
+
+	* truetype.fst: Fix for Thaana.
+
+	* Mymr-MyaZedi.flt: Renamed from MYANMAR-ZEDI.flt.
+
+	* Makefile.am, mdb.dir, default.fst, truetype.fst: Adjusted for
+	the name change (MYANMAR-ZEDI.flt -> Mymr-MyaZedi.flt).
+
+2004-08-13  Kenichi Handa  <handa@m17n.org>
+
+	* MYANMAR-ZEDI.flt: Fix typo in Medial Ya handling.  Fix for the
+	case of preferring Medial Ra to Kinzi.  For for the case of Medial
+	Ra with single-width consonant to wide subscript.
+
+2004-08-13  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am, mdb.dir, truetype.fst, default.fst, ORI-OTF.flt:
+	Add Oriya support.
+
+	* TEL-OTF.flt: Fix forced-*-form patterns.
+
+	* BEN-OTF.flt: Fix bug in base consonant finding.
+
+2004-08-09  Kenichi Handa  <handa@m17n.org>
+
+	* .cvsignore: Add m17n-db.
+
+	* MYANMAR-ZEDI.flt: Fix for special vowels.
+
+	* kk-arabic.mim: Add @verbatim and @endverbatim in the comment.
+
+	* ka-kbd.mim: Fix some keys.
+
+2004-08-08  Kenichi Handa  <handa@m17n.org>
+
+	* rfc1345.mim, ka-kbd.mim: New input method.
+
+	* mdb.dir, Makefile.am: Add ka-kbd.mim and rfc1345.mim.
+
+2004-08-07  Kenichi Handa  <handa@m17n.org>
+
+	* ka-kbd.mim, rfc1345.mim: New input methods.
+	
+	* Makefile.am, mdb.dir: Add ka-kbd.mim and rfc1345.mim.
+
+2004-08-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* BEN-OTF.flt: Fix typo.
+
+2004-08-06  Kenichi Handa  <handa@m17n.org>
+
+	* MLM-OTF.flt: Apply GSUB to prebase part and postbase part in
+	different stages.
+
+2004-08-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARABIC-OTF.flt, mdb.dir, truetype.fst, default.fst, Makefile.am:
+	Arabic OTF support.
+
+2004-08-04  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* THAANA-OTF.flt: Simplified, thanks to libotf upgrade.
+
+2004-08-03  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARABIC.flt: Add missing '*' in 'disjoin'.
+
+2004-07-29  Kenichi Handa  <handa@m17n.org>
+
+	* MYANMAR-ZEDI.flt: Implement more complrex rules.
+
+2004-07-23  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am, truetype.fst, mdb.dir, default.fst, THAANA-OTF.flt
+	Add Thaana support.
+
+2004-07-21  Kenichi Handa  <handa@m17n.org>
+
+	* truetype.fst: Fix previous change.
+
+	* default.fst: Fix previous change.
+
+2004-07-21  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: Fix previous change.
+
+	* truetype.fst: Fix previous change. 
+
+2004-07-20  Kenichi Handa  <handa@m17n.org>
+
+	* MYANMAR-ZEDI.flt: Implement complex rules.
+
+	* TML-OTF.flt: Fix typo (gujr -> taml).
+
+	* my-kbd.mim: New input method for Myanmar.
+
+	* mdb.dir: Add my-kdb.mim.
+
+	* Makefile.am (INPUT_METHOD): Add my-kdb.mim.
+
+2004-07-16  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: Fix font orders.
+
+	* truetype.fst: Fix font orders.
+
+2004-07-08  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am, default.fst, truetype.fst, mdb.dir:
+	Add Tamil OTF entries.
+
+	* TML-OTF.flt: New file.
+
+2004-07-06  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* GUJ-OTF.flt: Fix a very rare case (Syllables beginning with "RHRHC".)
+
+2004-07-05  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: Fix typo (gardi->gargi).
+
+	* truetype.fst: Add Gujarati.
+
+2004-07-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* Makefile.am, mdb.dir: Add GUJ-OTF.flt.
+
+	* default.fst: Add gardi-1.3 for Devanagari.
+	Add padmaa for Gujarati.
+
+	* GUJ-OTF.flt: New file.
+
+2004-07-05  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst, truetype.fst, mdb.dir, Makefile.am: Add Myanmar entry.
+
+	* Makefile.am (FONT_LAYOUT_TABLE): Add MYANMAR-ZEDI.flt.
+
+	* mdb.dir: Add Myanmar entry.
+
+	* truetype.fst: Likewise.
+
+	* default.fst: Add Myanmar entry.
+
+	* MYANMAR-ZEDI.flt: New file, still experimental.
+
+2004-07-05  Kenichi Handa  <handa@m17n.org>
+
+	* default.fst: Fix typo (gardi->gargi).
+
+	* truetype.fst: Add Gujarati.
+
+2004-07-05  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* GUJ-OTF.flt, default.fst, mdb.dir, Makefile.am:
+	Add Gujarati support.
+
+2004-07-05  Kenichi Handa  <handa@m17n.org>
+
+	* MYANMAR-ZEDI.flt: New file, still experimental.
+
+	* default.fst, truetype.fst, mdb.dir, Makefile.am: Add Myanmar entry.
+
+	* Makefile.am (FONT_LAYOUT_TABLE): Add MYANMAR-ZEDI.flt.
+
+2004-06-30  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* KAN-OTF.flt, default.fst, mdb.dir, Makefile.am:
+	Add Kannada support.
+
+2004-06-29  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* TEL-OTF.flt, default.fst, mdb.dir, Makefile.am:
+	Add Telugu support.
+
+2004-06-25  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* GUR-OTF.flt, DEV-OTF.flt: Fix typo.
+
+2004-06-22  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* GUR-OTF.flt, default.fst, mdb.dir, Makefile.am:
+	Add Gurmukhi support.
+
+2004-06-16  Kenichi Handa  <handa@m17n.org>
+
+	* truetype.fst: Add "baekmuk dotum" for han/ko.
+
+2004-06-15  Kenichi Handa  <handa@m17n.org>
+
+	* truetype.fst: Add freeserif for latin and fallbacks.
+
+2004-06-14  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Version changed to 1.1.0.  Include m17n-db in
+	AC_CONFIG_FILES.
+
+	* Makefile.am (bin_SCRIPTS): New variable.
+
+	* m17n-db.in: New file.
+
+2004-05-28  Kenichi Handa  <handa@m17n.org>
+
+	* mapconv.in: Fix generating sed command from $2.
+
+	* truetype.fst: Add Bengali support.
+
+2004-05-25  Kenichi Handa  <handa@m17n.org>
+
+	* Makefile.am (FONT_LAYOUT_TABLE): Add BEN-OTF.flt.
+
+2004-05-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARABIC.flt: Fix shadda+kasra[tan] combination.
+
+2004-05-21  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* BEN-OTF.flt, default.fst, mdb.dir: Add Bengali support.
+
+2004-04-28  Kenichi Handa  <handa@m17n.org>
+
+	* el-kbd.png, he-kbd.png, hr-kbd.png, kk-kbd.png, latin-post.png,
+	ru-yawerty.png, ru-yawerty2.png, sk-kbd.png, sk-kbd2.png,
+	sr-kbd.png: New image files.
+
+	* el-kbd.mim, he-kbd.mim, hr-kbd.mim, kk-kbd.mim, latin-post.mim,
+	ru-yawerty.mim, sk-kbd.mim, sr-kbd.mim: Add Doxygen command
+	@image.
+
+2004-04-13  Kenichi Handa  <handa@m17n.org>
+
+	* DEV-OTF.flt ("([CR]n?H)([NJ])"): Fix for the case of this
+	pattern.
+
+2004-03-29  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.0 Patch Level 2 released.
+
+2004-03-29  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Version changed to 1.0.2.
+
+2004-03-23  Kenichi Handa  <handa@m17n.org>
+
+	* CHARSET.tbl: Fix mapfile names.
+
+2004-03-19  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.0 Patch Level 1 released.
+
+2004-03-19  Kenichi Handa  <handa@m17n.org>
+
+	* configure.ac: Version changed to 1.0.1.
+
+2004-03-19  Kenichi Handa  <handa@m17n.org>
+
+	* HEBREW.flt: Fix combining code.
+
+2004-03-18  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* sk-kbd.mim, lo-lrt.mim: Fix typo.
+
+	* sr-kbd.mim: New input method for Serbian.
+
+	* hr-kbd.mim: New input method for Croatian.
+
+	* Makefile.am, mdb.dir: Add above two input methods.
+
+2004-03-17  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* DEV-CDAC.flt: Fix typo.
+
+2004-03-16  Kenichi Handa  <handa@m17n.org>
+
+	* ja-anthy.mim (henkan-eidt): Fix calling syntax of resize
+	function.
+
+2004-03-16  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARABIC.flt: Add ZWJ & ZWNJ in phase 2.
+	ZWJ & ZWNJ output themselves in phase 3.
+
+2004-03-15  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* ARABIC.flt: Add ZWJ & ZWNJ in phase 1.
+
+2004-03-12  TAKAHASHI Naoto  <ntakahas@m17n.org>
+
+	* mdb.dir: Add kk-kbd.mim, kk-arabic.mim.
+
+	* Makefile.am (INPUT_METHOD): Add kk-kbd.mim, kk-arabic.mim.
+
+	* kk-arabic.mim: New input method for Kazakh (Arabic script)
+
+	* kk-kbd.mim: New input method for Kazakh (Cyrillic script)
+
+	* ar-kbd.mim: Add mirroring chars.
+
+	* fa-isiri.mim: Add mirroring chars.
+
+	* he-kbd.mim: Add mirroring chars.
+
+	* ru-yawerty.mim: Fix typo.
+
+2004-03-09  TAKAHASHI Naoto <ntakahas@m17n.org>
+
+	* ar-kbd.mim: Add keys for inputting punctuations.
+
+	* ARABIC.flt: Add support for Kazakh high hamza.
+
+	* FORMATS/FLT.txt (MACRO-NAME): Fix typo.
+
+	* latin-post.mim: Fix many keys for consistency.
+
+2004-03-01  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.0 released.
+
+
+Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
+  2014
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+
+This file is part of the m17n library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.

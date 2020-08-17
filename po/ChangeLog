@@ -1,0 +1,113 @@
+2014-03-22  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.in.in: Upgrade to gettext-0.18.1.
+	* Rules-quot: Upgrade to gettext-0.18.1.
+
+2013-04-10  Kenichi Handa  <handa@gnu.org>
+
+	* LINGUAS: Add eo.
+
+	* m17n-db.pot: Updated.
+
+	* de.po: Merge msgstr from m17n-contrib.
+
+	* ja.po, vi.po: Re-generated.
+
+	* eo.po: Merged from m17n-contrib.
+
+2010-07-16  Kenichi Handa  <handa@m17n.org>
+
+	* LINGUAS: Add de.
+
+2010-07-16  Chris Leick  <c.leick@vollbio.de>
+
+	* de.po: New file.
+
+2009-07-28  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.5 released.
+
+2008-10-20  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.3 released.
+
+2008-06-23  Kenichi Handa  <handa@m17n.org>
+
+	* Version 1.5.2 released.
+
+2008-06-23  Kenichi Handa  <handa@m17n.org>
+
+	* m17n-db.pot: Updated.
+
+	* vi.po: Updated.
+
+	* ja.po: Updated.
+
+2008-01-30  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* Version 1.5.1 released.
+
+2008-01-30  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* ja.po: Updated.
+
+	* vi.po: Updated.
+
+	* m17n-db.pot: Updated.
+
+2008-01-15  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* vi.po: Updated.
+
+2007-12-28  Kenichi Handa  <handa@ni.aist.go.jp>
+
+	* Version 1.5.0 released.
+
+2007-06-14  Kenichi Handa  <handa@m17n.org>
+
+	* vi.po: New file.
+
+	* m17n-db.pot: Updated.
+
+	* LINGUAS: Add vi.
+
+	* ja.po: Updated.
+
+2007-06-05  Kenichi Handa  <handa@m17n.org>
+
+	* m17n-db.pot, ja.po: Updated.
+
+2007-05-30  Kenichi Handa  <handa@m17n.org>
+
+	* Makevars (XGETTEXT_OPTIONS): Add "--from-code utf-8".
+
+2006-11-28  Kenichi Handa  <handa@m17n.org>
+
+	* .cvsignore: New file.
+
+	* m17n-db.pot, ja.po: Updated.
+
+2006-11-28  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.in.in: Upgrade to gettext-0.15.
+
+2006-10-19  Kenichi Handa  <handa@m17n.org>
+
+	* ja.po: Updated.
+
+2006-09-26  Kenichi Handa  <handa@m17n.org>
+
+	* ja.po: Updated.
+
+2006-09-21  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.in.in: New file, from gettext-0.14.4.
+	* Rules-quot: New file, from gettext-0.14.4.
+	* boldquot.sed: New file, from gettext-0.14.4.
+	* en@boldquot.header: New file, from gettext-0.14.4.
+	* en@quot.header: New file, from gettext-0.14.4.
+	* insert-header.sin: New file, from gettext-0.14.4.
+	* quot.sed: New file, from gettext-0.14.4.
+	* remove-potcdate.sin: New file, from gettext-0.14.4.
+	* POTFILES.in: New file.
+

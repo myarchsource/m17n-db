@@ -1,0 +1,303 @@
+* NEWS -- What's new in the m17n database.			-*- outline -*-
+Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
+  2014
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+See the end for copying conditions.
+Copyright (C) 2015, 2016, 2017, 2018 Kenichi Handa <handa@gnu.org>
+
+
+* Changes in the m17n database 1.8.0
+
+** New input methods are added.
+
+mr-remigton.mim: Marathi input method for remington layout
+mr-typewriter.mim: Marathi input method for typewriter layout
+ne-rom-translit.mim: Nepali input method with roman transliteration
+ne-trad.mim: Nepali input method for traditional layout
+kn-optitransv2.mim: Kannada input method by the OPTITRANS transliteration system
+hi-optitransv2.mim: Hindi input method  by the OPTITRANS transliteration system
+ml-enhanced-inscript.mim: Malayalam input method for enhanced inscript layout
+
+** This input method is largely augmented.
+
+lsymbol.mim: Add many symbols.
+
+** Names of these input methods are changed.
+
+uk-kbd.mim: renamed from ua-kbd to uk-kbd
+zh-zhuyin.mim: renamed from zh-bopomofo to zh-zhuyin
+
+
+* Changes in the m17n database 1.7.0
+
+** New input methods are added.
+
+ar-translit.mim: Arabic input method based on Roman transliteration.
+
+latn1-pre.mim: Latin input method simulating "US International Keyboard".
+
+ssymbol.mim, lsymbol.mim: Input method for various symbols.
+
+** A new global variable is added.
+
+fallback-input-method: Comma separated fallback input method names.
+
+
+* Changes in the m17n database 1.6.5
+
+** All input methods in the m17n contrib package are merged.
+
+** New input methods are added.
+
+sa-itrans.mim: Sanskrit input method with ITRANS method
+
+ml-remington.mim: Malayalam input method.
+
+
+* Changes in the m17n database 1.6.4
+
+This release is just for bug fixing.
+
+
+* Changes in the m17n database 1.6.3
+
+** A new input method is added.
+
+ua-kbd.mim -- Ukrainian input method with Ukrainian/Russian keyboard layout
+
+** An input method is deleted.
+
+bo-ewts.mim is moved to m17n-contrib package.
+
+
+* Changes in the m17n database 1.6.2
+
+** New FLT file.
+
+FLT/HEBR-OTF.flt 
+
+
+* Changes in the m17n database 1.6.1
+
+** This release is just for a minor bug fix.
+
+
+* Changes in the m17n database 1.6.0
+
+** An input method is deleted.
+
+si-wijesekera-preedit.mim
+
+** New FLT files are added.
+
+FLT/MLM2-OTF.flt, FLT/KND2-OTF.flt, FLT/TEL2-OTF.flt,
+FLT/TML2-OTF.flt, FLT/ORY2-OTF.flt, FLT/GJR2-OTF.flt,
+FLT/GUR2-OTF.flt, FLT/BNG2-OTF.flt, FLT/DEV2-OTF.flt,
+FLT/MYMR-SIL.flt
+
+
+* Changes in the m17n database 1.5.5
+
+** An input method is deleted.
+
+si-wijesekera-preedit-alt.mim
+
+** These Vietnamese input methods adopt smart-quotes.
+
+vi-telex.mim, vi-tcvn.mim, vi-vni.mim
+
+
+* Changes in the m17n database 1.5.4
+
+** A new input method is added.
+
+ta-lk-renganathan.mim (Tamil)
+
+
+* Changes in the m17n database 1.5.3
+
+This release is just for bug fixing.
+
+
+* Changes in the m17n database 1.5.2
+
+** A new input method is added.
+
+sa-harvard-kyoto.mim (Sanscrit)
+
+
+* Changes in the m17n database 1.5.1
+
+** A new FLT is added.
+
+CHAM-GENERIC.flt (For Cham script)
+
+** Several new input methods are added.
+
+vi-tcvn.mim (Vietnamese)
+cmc-kbd.mim (Cham)
+sa-harvard-kyoto.mim (Sanscrit)
+
+
+* Changes in the m17n database 1.5.0
+
+** A new FLT is added.
+
+COMBINING.flt (For combining diacritical marks)
+
+
+* Changes in the m17n database 1.4.0
+
+** Several new input methods are added.
+
+da-post.mim (Danish)
+bo-ewts.mim (Tibetan)
+fr-azerty.mim (French)
+
+** New database for language names.
+
+
+* Changes in the m17n database 1.3.4
+
+** Several new input methods are added.
+
+grc-mizuochi.mim (Greek)
+ja-trycode.mim (Japanese)
+ru-phonetic.mim (Russian)
+si-wijesekera-preedit.mim (Sinhala)
+th-kesmanee-2.mim, th-pattachote.mim th-pattachote-2.mim (Thai)
+th-tis820.mim th-tis820-2.mim (Thai)
+ug-kbd.mim (Uyghur)
+zh-bopomofo.mim (Chinese bopomofo, renamed from bopo-kbd.mim)
+
+** Several new FLTs are added.
+
+LAOO-OTF.flt (Lao)
+THAI-OTF.flt (Thai)
+
+** Gettextized.
+
+
+* Changes in the m17n database 1.3.0
+
+** Wildcard handling is added to mdb.dir.
+
+For instance, the current mdb.dir file contains this single line:
+  (input-method * "*.mim")
+instead of lines for each input methods.
+
+** Several new input methods are added.
+
+bn-unijoy.mim (Bengali)
+hi-typewriter.mim (Hindi)
+lo-kbd.mim (Lao)
+si-wijesekera.mim (Sinhala)
+sv-post.mim (Swedish)
+vi-vni.mim (Vietnamese)
+zh-cangjie.mim, zh-quick.mim (Chinese)
+zh-py-b5.mim, zh-py-gb.mim (Chinese, restricted version of zh-py.mim)
+zh-tonepy-b5.mim, zh-tonepy-gb.mim (Chinese, restricted version of zh-tone.mim)
+
+** Several new FLTs are added.
+
+ARAB-OTF-NO-GPOS.flt (Arabic)
+KHMR-OTF.flt (Khmer)
+LAOO-GENERIC.flt (Lao)
+MLYM-RACHANA.flt (Malayalam)
+THAI-GENERIC.flt (Thai)
+TIBT-OTF.flt (Tibetan)
+
+
+* Changes in the m17n database 1.2.0
+
+** Naming convention for *.flt and *.mim is changed.
+
+Script names : ISO 15924 (four letter codes)
+Language names : ISO 639-1 (two letter codes)
+See ChangeLog for details.
+
+** Several new input methods are added.
+
+dv-phonetic.mim (Thaana script)
+hy-kbd.mim (Armenian script)
+ko-romaja.mim (Korean Hangul script)
+my-kbd.mim (Myanmar script)
+si-samanala.mim (Sinhala script)
+zh-pinyin.min (PinYin script)
+bopo-kbd.mim (Bopomofo script)
+syrc-phonetic.mim (Syriac script)
+latn-pre.mim (Latin script)
+
+** Several new FLTs are added.
+
+SINH-OTF.flt (Sinhala script)
+SYRC-OTF.flt (Syriac script)
+
+** Several new char-tables are added.
+
+BLOCK.tab (Unicode Blocks)
+CASE-MAPPING.tab CASED.tab SOFT-DOTTED.tab (for case conversion)
+LINEBREAK.tab (for linebreaking)
+LANGUAGE.tbl (ISO639-1, ISO639-2 language codes)
+SCRIPT-LANGUAGE.tbl (script vs languages)
+
+** A new fontset generic.fst is added.
+
+
+* Changes in the m17n database 1.1.0
+
+** Several new FLTs are added.
+
+ARABIC-OTF.flt (Arabic script)
+BEN-OTF.flt (Bengali script)
+GUJ-OTF.flt (Gujarati script)
+GUR-OTF.flt (Gurmukhi script)
+KAN-OTF.flt (Kannada script)
+MYANMAR-ZEDI.flt (Myanmar script)
+ORI-OTF.flt (Oriya script)
+TEL-OTF.flt (Telugu script)
+THAANA-OTF.flt (Thaana script)
+TML-OTF.flt (Tamil script)
+
+** Several new input methods are added.
+
+sr-kbd.mim (Serbian)
+hr-kbd.mim (Croatian)
+ka-kdb.mim (Georgian)
+kk-arabic.mim (Kazakh in Arabic script)
+kk-kdb.mim (Kazakh in Cyrillic script)
+
+** New command m17n-db prints information about the installed m17n database.
+
+
+* Changes in the m17n database 1.0
+
+** Released.
+
+
+* Copyright information
+
+Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
+  2014
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+Copyright (C) 2015, 2016, 2017, 2018 Kenichi Handa <handa@gnu.org>
+
+This file is part of the m17n database; a sub-part of the m17n
+library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.
